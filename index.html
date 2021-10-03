@@ -14,52 +14,54 @@
 	<body>
 		<nav>
 			<ul>
+				<li><a href="#landingHero">Home</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#projects">Projects</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
 		<section id="landingHero">
-			<h1 id="heroHeader">Hi, I'm Tim Kravel.</h1>
+			<div id="imgContainer" class="sectionHeader">
+				<img
+					id="profileImg"
+					src="img/profile1.png"
+					alt="Profile picture"
+				/>
+			</div>
+			<div class="hero-wrapper">
+			<h1 id="heroHeader" class="section-info">Hi! I'm Tim Kravel.</h1>
+			<p class="section-info">V</p>
+			</div>
 		</section>
 		<section id="about">
-			<h2 class="sectionHeader">About</h2>
+			<h2 class="sectionHeader">Great to meet ya! Let me tell you a little about myself.</h2>
 			<div class="about-wrapper">
-				<div id="imgContainer">
-					<img
-						id="profileImg"
-						src="img/profile1.png"
-						alt="Profile picture"
-					/>
-				</div>
-				<div id="aboutInfoContainer">
-					<h2>Great to meet ya! My name is Tim Kravel.</h2>
+				
 					<p>
-						I'm a full stack developer looking to join a team to
-						continue creating amazing work.
+						I'm a full stack developer looking for a team to create amazing work with.
 					</p>
 					<p>
-						My coding journey started with commandline java
+						I started with command line java
 						programs. Shortly after a friend suggested I look into
-						front end development due to my artistic history. My
-						passion for learning and figuring out how things work
+						front end development due to my creative nature. My
+						need to figure out how things work
 						lead me to full stack development.
 					</p>
 					<p>
-						When I'm not working on my coding skills you can find me
+						When I'm not coding you can find me
 						either hanging out with my son at a park, enjoying time
 						in nature, or creating art!
 					</p>
-				</div>
+				
 			</div>
 		</section>
 		<section id="projects">
-			<h2 class="sectionHeader">Projects</h2>
+			<h2 class="sectionHeader">Check out my work!</h2>
 			<div class="project-wrapper">
 				<div class="project">
 					<img
 						class="project-img"
-						src="img/pexels-malte-luk-1669754.jpg"
+						src="img/parent-helper.jpg"
 					/>
 					<h4 class="project-header">Parent Helper</h4>
 					<p>
@@ -69,9 +71,9 @@
 
 					<ul class="project-links">
 						<li>
-							<a href="#">Code</a>
+							<a target="_blank" href="https://github.com/TKravel/parent-helper">Code</a>
 						</li>
-						<li><a href="#">Demo</a></li>
+						<li><a target="_blank" href="http://tranquil-atoll-54937.herokuapp.com/">Demo</a></li>
 					</ul>
 				</div>
 				<div class="project">
@@ -107,7 +109,7 @@
 			</div>
 		</section>
 		<section id="contact">
-			<h2 class="sectionHeader">Contact</h2>
+			<h2 class="sectionHeader">Let's connect!</h2>
 			<div class="contact-wrapper">
 				<p>
 					Want to work together or interested in a project?<br />Lets

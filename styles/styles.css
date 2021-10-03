@@ -91,6 +91,8 @@ nav a {
 
 #landingHero {
 	display: flex;
+	flex-direction: column;
+	flex-grow: 30% 70%;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
@@ -100,18 +102,54 @@ nav a {
 	background-color: var(--main-dark);
 }
 
+#imgContainer {
+	align-self: center;
+	max-width: 40vh;
+	display: flex;
+	flex-basis: 40%;
+	justify-content: center;
+	padding-top: 2em;
+	margin: auto;
+}
+
+#profileImg {
+	height: auto;
+	margin: auto;
+	border: 3px solid var(--main-blue);
+	border-radius: 50%;
+}
+.hero-wrapper {
+	flex-basis: 60%;
+	text-align: center;
+	padding-top: 2em;
+	margin: auto;
+}
+
+.hero-wrapper p {
+	width: 100%;
+	padding-top: 2em;
+}
+
 #heroHeader {
 	/* color: #fff; */
 	font-size: 4rem;
 	font-family: 'Roboto', sans-serif;
-	text-align: center;
+	width: 100%;
 	margin: auto;
+}
+
+
+
+@media screen and (max-width: 550px) {
+	#heroHeader {
+		font-size: 2rem;
+	}
 }
 
 /* Sections */
 
 .sectionHeader {
-	font-size: 2.5rem;
+	font-size: 2rem;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
 	width: 100%;
@@ -138,35 +176,25 @@ section:nth-child(odd) {
 
 /* About page */
 
-.about-wrapper {
+#about {
 	display: flex;
 	flex-wrap: wrap;
+	line-height: 1.7;
+}
+
+.about-wrapper {
+	text-align: center;
+	padding: 0 4em 0 4em;
+	align-content: start;
 	grid-area: section-info;
 }
-#imgContainer {
-	align-self: center;
-	flex-grow: 1;
-	max-width: 250px;
-	display: flex;
-	justify-content: center;
-	margin: auto;
-}
 
-#aboutInfoContainer {
-	align-self: center;
-	flex-grow: 2;
-	flex-basis: 40%;
-	padding: 4em;
-	min-width: 375px;
-}
 
-#profileImg {
-	height: auto;
-	margin: auto;
-	width: 80%;
-	border: 3px solid var(--main-blue);
-	border-radius: 50%;
-}
+/* #aboutInfoContainer {
+	text-align: center;
+	align-self: center;
+	padding: 0 4em 0 4em;
+} */
 
 /* Projects */
 
@@ -194,6 +222,12 @@ section:nth-child(odd) {
 	box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.project:hover {
+	box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .project-img {
