@@ -1,3 +1,21 @@
+// Nav logic
+
+const openNav = document.getElementById('nav-open');
+const closeNav = document.getElementById('nav-close');
+const nav = document.getElementsByTagName('nav')[0];
+
+closeNav.addEventListener('click', () => {
+	nav.style.setProperty('display', 'none');
+	openNav.style.setProperty('display', 'block');
+});
+
+openNav.addEventListener('click', () => {
+	nav.style.setProperty('display', 'block');
+	openNav.style.setProperty('display', 'block');
+});
+
+// Form submit
+
 const form = document.getElementById('contact-form');
 
 form.onsubmit = (e) => {

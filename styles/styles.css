@@ -58,12 +58,60 @@ html {
 	scroll-behavior: smooth;
 }
 
+@media screen and (max-width: 550px) {
+	html {
+		overflow-x: hidden;
+	}
+}
+
+/* Sections */
+
+.sectionHeader {
+	font-size: 2rem;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	width: 100%;
+	align-self: center;
+	grid-area: header;
+}
+
+section {
+	display: grid;
+	min-height: 100vh;
+	padding-top: 2em;
+	justify-content: center;
+	color: var(--main-white);
+	background-color: var(--main-dark);
+	grid-template-rows: 1fr 6fr;
+	grid-template-areas:
+		'header'
+		'section-info';
+}
+
+section:nth-child(odd) {
+	background-color: var(--main-mid);
+}
+
+@media screen and (max-width: 550px) {
+	.section {
+		padding-top: 0;
+	}
+}
+
 /* Nav */
 
 nav {
 	position: fixed;
 	top: 0;
 	width: 100%;
+}
+
+#nav-open {
+	display: none;
+}
+
+#nav-close {
+	display: none;
 }
 
 nav ul {
@@ -87,6 +135,51 @@ nav a {
 	text-decoration: none;
 }
 
+@media screen and (max-width: 550px) {
+	nav {
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 80%;
+		color: var(--main-dark);
+		background-color: var(--main-blue);
+		border-left: 1px solid #000;
+	}
+
+	nav ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 50%;
+		background-color: var(--main-blue);
+		margin-top: 2rem;
+	}
+
+	nav li {
+		display: block;
+	}
+
+	nav a {
+		color: var(--main-dark);
+	}
+
+	#nav-open {
+		color: var(--main-blue);
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 0.2em;
+	}
+
+	#nav-close {
+		display: block;
+		color: var(--main-mid);
+		height: auto;
+		margin-left: 0.5em;
+		margin-top: 0.2em;
+	}
+}
+
 /* Landing page */
 
 #landingHero {
@@ -97,7 +190,6 @@ nav a {
 	align-items: center;
 	height: 100vh;
 	width: auto;
-	margin-top: 2rem;
 	color: var(--main-blue);
 	background-color: var(--main-dark);
 }
@@ -138,40 +230,10 @@ nav a {
 	margin: auto;
 }
 
-
-
 @media screen and (max-width: 550px) {
 	#heroHeader {
 		font-size: 2rem;
 	}
-}
-
-/* Sections */
-
-.sectionHeader {
-	font-size: 2rem;
-	font-family: 'Roboto', sans-serif;
-	text-align: center;
-	width: 100%;
-	align-self: center;
-	grid-area: header;
-}
-
-section {
-	display: grid;
-	min-height: 100vh;
-	padding-top: 2em;
-	justify-content: center;
-	color: var(--main-white);
-	background-color: var(--main-dark);
-	grid-template-rows: 1fr 6fr;
-	grid-template-areas:
-		'header'
-		'section-info';
-}
-
-section:nth-child(odd) {
-	background-color: var(--main-mid);
 }
 
 /* About page */
@@ -188,7 +250,6 @@ section:nth-child(odd) {
 	align-content: start;
 	grid-area: section-info;
 }
-
 
 /* #aboutInfoContainer {
 	text-align: center;
