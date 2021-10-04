@@ -29,9 +29,9 @@ function handleForm(e) {
 		.then((Response) => Response.json())
 		.then((data) => {
 			console.log(data);
-			email.innerText = '';
-			fullName.innerText = '';
-			message.innerText = '';
+			email.value = '';
+			fullName.value = '';
+			message.value = '';
 		})
 		.catch((err) => {
 			if (err) {
