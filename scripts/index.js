@@ -22,6 +22,7 @@ function handleForm(e) {
 	fetch('https://young-sierra-17248.herokuapp.com/contact', {
 		method: 'POST',
 		headers: {
+			mode: 'no-cors',
 			'content-type': 'application/json',
 		},
 		body: JSON.stringify(data),
