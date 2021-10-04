@@ -2,6 +2,7 @@ const form = document.getElementById('contact-form');
 
 form.onsubmit = (e) => {
 	handleForm(e);
+	form.reset();
 };
 
 function handleForm(e) {
@@ -29,9 +30,6 @@ function handleForm(e) {
 		.then((Response) => Response.json())
 		.then((data) => {
 			console.log(data);
-			email.value = '';
-			fullName.value = '';
-			message.value = '';
 		})
 		.catch((err) => {
 			if (err) {
