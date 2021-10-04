@@ -22,7 +22,6 @@ function handleForm(e) {
 	fetch('https://young-sierra-17248.herokuapp.com/contact', {
 		method: 'POST',
 		headers: {
-			'Access-Control-Allow-Origin': '*',
 			'content-type': 'application/json',
 		},
 		body: JSON.stringify(data),
