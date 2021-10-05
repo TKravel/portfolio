@@ -8,6 +8,8 @@
 /* Reset */
 html {
 	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 *,
@@ -64,6 +66,7 @@ html {
 	body {
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
+		overflow-y: scroll;
 	}
 }
 
