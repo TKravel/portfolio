@@ -18,14 +18,22 @@
 		></script>
 	</head>
 	<body>
-		<i id="nav-open" class="fas fa-bars fa-2x"></i>
-		<nav>
-			<i id="nav-close" class="fas fa-times fa-2x"></i>
+		<i
+			id="open-nav-btn"
+			class="fas fa-bars fa-2x show-nav"
+			onclick="openNav()"
+		></i>
+		<nav class="hide-nav">
+			<i
+				id="close-nav-btn"
+				class="fas fa-times fa-2x"
+				onclick="closeNav()"
+			></i>
 			<ul>
-				<li><a href="#landingHero">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li class="nav-link"><a href="#landingHero">Home</a></li>
+				<li class="nav-link"><a href="#about">About</a></li>
+				<li class="nav-link"><a href="#projects">Projects</a></li>
+				<li class="nav-link"><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
 		<section id="landingHero">
@@ -40,13 +48,13 @@
 				<h1 id="heroHeader" class="section-info">
 					Hi! I'm Tim Kravel.
 				</h1>
-				<p class="section-info">V</p>
+				<a id="scroll-down-arrow" class="section-info" href="#about"
+					><i class="fas fa-long-arrow-alt-down fa-2x"></i
+				></a>
 			</div>
 		</section>
 		<section id="about">
-			<h2 class="sectionHeader">
-				Great to meet ya! Let me tell you a little about myself.
-			</h2>
+			<h2 class="sectionHeader">Who am I?</h2>
 			<div class="about-wrapper">
 				<p>
 					I'm a full stack developer looking for a team to create

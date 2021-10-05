@@ -1,18 +1,38 @@
 // Nav logic
 
-const openNav = document.getElementById('nav-open');
-const closeNav = document.getElementById('nav-close');
+const openNavBtn = document.getElementById('open-nav-btn');
+const closeNavBtn = document.getElementById('close-nav-btn');
 const nav = document.getElementsByTagName('nav')[0];
+const navLinks = document.getElementsByClassName('nav-link');
 
-closeNav.addEventListener('click', () => {
-	nav.style.setProperty('display', 'none');
-	openNav.style.setProperty('display', 'block');
-});
+// closeNavBtn.addEventListener('click', () => {
+// 	nav.style.classList.remove('nav-open');
+// 	openNavBtn.classList.add('nav-open');
+// });
 
-openNav.addEventListener('click', () => {
-	nav.style.setProperty('display', 'block');
-	openNav.style.setProperty('display', 'block');
-});
+function closeNav() {
+	console.log('click');
+	nav.classList.remove('show-nav');
+	nav.classList.add('hide-nav');
+	openNavBtn.classList.add('show-nav');
+}
+
+function openNav() {
+	nav.classList.add('show-nav');
+	nav.classList.remove('hide-nav');
+	openNavBtn.classList.add('hide-nav');
+	openNavBtn.classList.remove('show-nav');
+
+	for (let i = 0; i < navLinks.length; i++) {
+		navLinks[i].addEventListener('click', () => {
+			nav.classList.remove('show-nav');
+			nav.classList.add('hide-nav');
+			openNavBtn.classList.add('show-nav');
+			openNavBtn.classList.remove('hide-nav');
+		});
+	}
+}
+// openNav.addEventListener('click', () => {});
 
 // Form submit
 

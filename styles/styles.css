@@ -5,15 +5,6 @@
 	--main-white: #eeeeee;
 }
 
-/* Color scheme */
-
-/* 
---main-blue: #003049;
-	--main-red: #d62828;
-	--strong-yellow: #f77f00;
-	--light-yellow: #fcbf49;
-	--main-white: #eae2b7;
-*/
 /* Reset */
 html {
 	box-sizing: border-box;
@@ -26,6 +17,8 @@ html {
 }
 
 body,
+div,
+section,
 h1,
 h2,
 h3,
@@ -62,6 +55,16 @@ html {
 	html {
 		overflow-x: hidden;
 	}
+
+	body::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge and Firefox */
+	body {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
 }
 
 /* Sections */
@@ -79,6 +82,7 @@ section {
 	display: grid;
 	min-height: 100vh;
 	padding-top: 2em;
+	padding-bottom: 2em;
 	justify-content: center;
 	color: var(--main-white);
 	background-color: var(--main-dark);
@@ -88,11 +92,15 @@ section {
 		'section-info';
 }
 
-section:nth-child(odd) {
+section:nth-child(even) {
 	background-color: var(--main-mid);
 }
 
 @media screen and (max-width: 550px) {
+	.sectionHeader {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
 	.section {
 		padding-top: 0;
 	}
@@ -106,13 +114,13 @@ nav {
 	width: 100%;
 }
 
-#nav-open {
+/* #open-nav-btn {
 	display: none;
 }
 
-#nav-close {
+#close-nav-btn {
 	display: none;
-}
+} */
 
 nav ul {
 	color: var(--main-blue);
@@ -163,7 +171,7 @@ nav a {
 		color: var(--main-dark);
 	}
 
-	#nav-open {
+	#open-nav-btn {
 		color: var(--main-blue);
 		position: fixed;
 		top: 0;
@@ -171,12 +179,20 @@ nav a {
 		padding: 0.2em;
 	}
 
-	#nav-close {
+	#close-nav-btn {
 		display: block;
 		color: var(--main-mid);
 		height: auto;
 		margin-left: 0.5em;
 		margin-top: 0.2em;
+	}
+
+	.show-nav {
+		display: block;
+	}
+
+	.hide-nav {
+		display: none;
 	}
 }
 
@@ -188,7 +204,7 @@ nav a {
 	flex-grow: 30% 70%;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
 	width: auto;
 	color: var(--main-blue);
 	background-color: var(--main-dark);
@@ -230,6 +246,10 @@ nav a {
 	margin: auto;
 }
 
+#scroll-down-arrow {
+	color: var(--main-blue);
+}
+
 @media screen and (max-width: 550px) {
 	#heroHeader {
 		font-size: 2rem;
@@ -249,6 +269,12 @@ nav a {
 	padding: 0 4em 0 4em;
 	align-content: start;
 	grid-area: section-info;
+}
+
+@media screen and(max-width: 550px) {
+	.about-wrapper {
+		padding: 1em;
+	}
 }
 
 /* #aboutInfoContainer {
