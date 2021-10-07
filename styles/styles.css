@@ -279,14 +279,14 @@ nav a {
 	display: flex;
 	flex-wrap: wrap;
 	line-height: 1.7;
-	align-items: flex-start;
+	align-items: center;
 }
 
 .about-wrapper {
 	flex-basis: 75%;
-	text-align: center;
+	text-align: left;
 	height: 75%;
-	padding: 0 4em 0 4em;
+	padding: 1.5em 4em 0 4em;
 	align-content: center;
 	/* grid-area: section-info; */
 }
@@ -414,6 +414,10 @@ nav a {
 	color: #0064b5;
 }
 
+.disabled-link {
+	color: var(--main-mid) !important;
+}
+
 @media screen and(max-width: 550px) {
 	.project {
 		width: 75%;
@@ -531,6 +535,7 @@ textarea {
 
 #sent-icon {
 	font-size: 6em;
+	color: var(--main-mid);
 	padding-bottom: 2rem;
 }
 
