@@ -4,9 +4,9 @@ Server code can be found at: https://github.com/TKravel/portfolio-server
 
 ## Tech used
 
-*HTML
-*CSS
-*Vanilla JavaScript
+* HTML
+* CSS
+* Vanilla JavaScript
 
 ## Live Demo
 
