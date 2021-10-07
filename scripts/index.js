@@ -79,11 +79,12 @@ function handleForm(e) {
 
 // scroll animations
 
-const scrollOffset = 100;
+const scrollOffset =
+	(window.innerHeight || document.documentElement.clientHeight) / 8;
 
 const scrollElement = document.querySelectorAll('.js-scroll');
 
-const elementInView = (el, offset = 0) => {
+const elementInView = (el, offset) => {
 	const elementTop = el.getBoundingClientRect().top;
 
 	return (

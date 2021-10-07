@@ -78,12 +78,13 @@ html {
 /* Sections */
 
 .sectionHeader {
+	flex-basis: 25%;
 	font-size: 2rem;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
 	width: 100%;
 	align-self: center;
-	grid-area: header;
+	/* grid-area: header; */
 }
 
 section {
@@ -278,13 +279,17 @@ nav a {
 	display: flex;
 	flex-wrap: wrap;
 	line-height: 1.7;
+	align-items: flex-start;
 }
 
 .about-wrapper {
+	display: block;
+	flex-basis: 75%;
 	text-align: center;
+	height: 75%;
 	padding: 0 4em 0 4em;
-	align-content: start;
-	grid-area: section-info;
+	align-content: center;
+	/* grid-area: section-info; */
 }
 
 @media screen and(max-width: 550px) {
@@ -348,16 +353,27 @@ nav a {
 }
 
 .scrolled.fade-in-bottom {
-	animation: fade-in-bottom 1s ease-in-out both;
+	animation: fade-in-bottom 500ms ease-in-out both;
 }
 
 @keyframes fade-in-right {
 	0% {
-		transform: translateX(100px);
+		transform: translateX(100vw);
 		opacity: 0;
 	}
 	100% {
 		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in-bottom {
+	0% {
+		transform: translateY(25vh);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
 		opacity: 1;
 	}
 }
@@ -420,7 +436,7 @@ nav a {
 	display: flex;
 	flex-direction: column;
 	height: 500px;
-	width: 80%;
+	width: 325px;
 	border: 1px solid #000;
 	border-radius: 0.3rem;
 	color: var(--main-dark);
@@ -493,6 +509,12 @@ textarea {
 
 .submit-btn:focus {
 	outline: none;
+}
+
+@media screen and(max-width: 550px) {
+	.contact-wrapper {
+		width: 80%;
+	}
 }
 
 /* Footer */
