@@ -87,7 +87,7 @@ html {
 }
 
 section {
-	display: grid;
+	/* display: grid; */
 	min-height: 100vh;
 	max-width: 100vw;
 	padding-top: 2em;
@@ -95,10 +95,10 @@ section {
 	justify-content: center;
 	color: var(--main-white);
 	background-color: var(--main-dark);
-	grid-template-rows: 1fr 6fr;
+	/* grid-template-rows: 1fr 6fr;
 	grid-template-areas:
 		'header'
-		'section-info';
+		'section-info'; */
 }
 
 section:nth-child(even) {
@@ -121,6 +121,7 @@ nav {
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 7;
 }
 
 /* #open-nav-btn {
@@ -191,7 +192,7 @@ nav a {
 		position: fixed;
 		top: 0.4em;
 		right: 0.4em;
-		/* padding: 0.2em; */
+		z-index: 6;
 	}
 
 	#close-nav-btn {
@@ -288,7 +289,7 @@ nav a {
 
 @media screen and(max-width: 550px) {
 	.about-wrapper {
-		padding: 1em;
+		padding: 0 0.2em 0 0.2em;
 	}
 }
 
@@ -333,6 +334,34 @@ nav a {
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
+.js-scroll {
+	opacity: 0;
+	transition: opacity 1000ms;
+}
+
+.js-scroll.scrolled {
+	opacity: 1;
+}
+
+.scrolled.fade-in-right {
+	animation: fade-in-right 1s ease-in-out both;
+}
+
+.scrolled.fade-in-bottom {
+	animation: fade-in-bottom 1s ease-in-out both;
+}
+
+@keyframes fade-in-right {
+	0% {
+		transform: translateX(100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
 .project-img {
 	height: 50%;
 	width: 100%;
@@ -372,6 +401,7 @@ nav a {
 
 @media screen and(max-width: 550px) {
 	.project {
+		width: 75%;
 		margin: 0;
 	}
 }
@@ -390,12 +420,13 @@ nav a {
 	display: flex;
 	flex-direction: column;
 	height: 500px;
-	width: 325px;
+	width: 80%;
 	border: 1px solid #000;
 	border-radius: 0.3rem;
 	color: var(--main-dark);
 	background-color: var(--main-white);
 	padding: 1rem;
+	margin: auto;
 	box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
@@ -420,7 +451,6 @@ textarea {
 	border-right: none;
 	border-bottom: 1px solid var(--main-mid);
 	border-radius: 0.2rem;
-	/* background-color: #; */
 	height: 1.5rem;
 	margin-bottom: 1rem;
 }

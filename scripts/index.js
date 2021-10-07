@@ -15,6 +15,7 @@ function closeNav() {
 	nav.classList.remove('show-nav');
 	nav.classList.add('hide-nav');
 	openNavBtn.classList.add('show-nav');
+	openNavBtn.classList.remove('hide-nav');
 }
 
 function openNav() {
@@ -75,3 +76,40 @@ function handleForm(e) {
 			}
 		});
 }
+
+// scroll animations
+
+const scrollOffset = 100;
+
+const scrollElement = document.querySelectorAll('.js-scroll');
+
+const elementInView = (el, offset = 0) => {
+	const elementTop = el.getBoundingClientRect().top;
+
+	return (
+		elementTop <=
+		(window.innerHeight || document.documentElement.clientHeight) - offset
+	);
+};
+
+const displayScrollElement = (element) => {
+	element.classList.add('scrolled');
+};
+
+const hideScrollElement = (element) => {
+	element.classList.remove('scrolled');
+};
+
+const handleScrollAnimation = () => {
+	scrollElement.forEach((element) => {
+		if (elementInView(element, scrollOffset)) {
+			displayScrollElement(element);
+		} else {
+			hideScrollElement(element);
+		}
+	});
+};
+
+window.addEventListener('scroll', () => {
+	handleScrollAnimation();
+});
