@@ -521,6 +521,11 @@ textarea {
 	outline: none;
 }
 
+#spinner {
+	color: var(--main-blue);
+	margin: 1rem auto;
+}
+
 #contact-response {
 	display: flex;
 	flex-direction: column;

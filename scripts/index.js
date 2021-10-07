@@ -43,10 +43,14 @@ const formWrapper = document.getElementById('contact-wrapper');
 const msg = document.getElementById('contact-response');
 const errorMsg = document.getElementById('contact-error');
 const directEmail = document.getElementById('error-email');
+const spinner = document.getElementById('spinner');
+const submitBtn = document.getElementById('submit-btn');
 
 form.onsubmit = (e) => {
 	handleForm(e);
 	form.reset();
+	submitBtn.classList.add('hide-content');
+	spinner.classList.remove('hide-content');
 };
 
 function handleForm(e) {
@@ -77,6 +81,7 @@ function handleForm(e) {
 			if (data) {
 				formWrapper.classList.add('hide-content');
 				msg.classList.remove('hide-content');
+				spinner.classList.add('hide-content');
 			}
 		})
 		.catch((err) => {
@@ -84,6 +89,7 @@ function handleForm(e) {
 				console.log('test', err);
 				formWrapper.classList.add('hide-content');
 				errorMsg.classList.remove('hide-content');
+				spinner.classList.add('hide-content');
 				directEmail.innerText =
 					'TLKravel' + '-at-' + 'Gmail' + '-dot-' + 'com';
 			}
@@ -94,6 +100,7 @@ function restoreForm() {
 	console.log('clicked');
 	msg.classList.add('hide-content');
 	formWrapper.classList.remove('hide-content');
+	submitBtn.classList.remove('hide-content');
 }
 
 // scroll animations
