@@ -3,6 +3,7 @@
 	--main-mid: #393e46;
 	--main-blue: #00adb5;
 	--main-white: #eeeeee;
+	--error-red: #cc0000;
 }
 
 /* Reset */
@@ -283,7 +284,6 @@ nav a {
 }
 
 .about-wrapper {
-	flex-basis: 75%;
 	text-align: left;
 	height: 75%;
 	padding: 1.5em 4em 0 4em;
@@ -291,9 +291,13 @@ nav a {
 	/* grid-area: section-info; */
 }
 
-@media screen and(max-width: 550px) {
+.about-wrapper p {
+	padding: 0.6rem;
+}
+
+@media screen and (max-width: 550px) {
 	.about-wrapper {
-		padding: 0 0.2em 0 0.2em;
+		padding: 0 0.8em 0 0.8em !important;
 	}
 }
 
@@ -536,6 +540,19 @@ textarea {
 #sent-icon {
 	font-size: 6em;
 	color: var(--main-mid);
+	padding-bottom: 2rem;
+}
+
+#contact-error {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+}
+
+#error-icon {
+	font-size: 6em;
+	color: var(--error-red);
 	padding-bottom: 2rem;
 }
 

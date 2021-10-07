@@ -41,12 +41,12 @@ function openNav() {
 const form = document.getElementById('contact-form');
 const formWrapper = document.getElementById('contact-wrapper');
 const msg = document.getElementById('contact-response');
+const errorMsg = document.getElementById('contact-error');
+const directEmail = document.getElementById('error-email');
 
 form.onsubmit = (e) => {
 	handleForm(e);
 	form.reset();
-	formWrapper.classList.add('hide-content');
-	msg.classList.remove('hide-content');
 };
 
 function handleForm(e) {
@@ -74,10 +74,18 @@ function handleForm(e) {
 		.then((Response) => Response.json())
 		.then((data) => {
 			console.log(data);
+			if (data) {
+				formWrapper.classList.add('hide-content');
+				msg.classList.remove('hide-content');
+			}
 		})
 		.catch((err) => {
 			if (err) {
-				console.log(err);
+				console.log('test', err);
+				formWrapper.classList.add('hide-content');
+				errorMsg.classList.remove('hide-content');
+				directEmail.innerText =
+					'TLKravel' + '-at-' + 'Gmail' + '-dot-' + 'com';
 			}
 		});
 }
@@ -125,3 +133,11 @@ const handleScrollAnimation = () => {
 window.addEventListener('scroll', () => {
 	handleScrollAnimation();
 });
+
+// Footer date
+
+const currentDate = document.getElementById('current-year');
+const date = new Date();
+const year = date.getFullYear();
+
+currentDate.innerText = year;
