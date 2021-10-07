@@ -140,50 +140,59 @@
 		<section id="contact">
 			<div class="js-scroll fade-in-bottom">
 				<h2 class="sectionHeader">Let's connect!</h2>
-				<div class="contact-wrapper">
-					<p>
-						Want to work together or interested in a project?<br />Lets
-						chat!
-					</p>
-					<form
-						id="contact-form"
-						class="contact-form"
-						onsubmit="handleForm(e)"
+				<div class="contact-container">
+					<div id="contact-wrapper">
+						<p>
+							Want to work together, interested in a project, or
+							have feedback?<br />Lets chat!
+						</p>
+						<form
+							id="contact-form"
+							class="contact-form"
+							onsubmit="handleForm(e)"
+						>
+							<label for="fullName">Full name</label>
+							<input
+								type="text"
+								id="fullName"
+								name="fullName"
+								placeholder="Your name"
+								required
+							/>
+							<br />
+							<label for="email">Email</label>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="Your email"
+								required
+							/>
+							<br />
+							<label for="message">Message</label>
+							<textarea
+								id="message"
+								name="message"
+								placeholder="Enter your message..."
+								required
+							></textarea>
+							<br />
+							<button class="submit-btn">Submit</button>
+						</form>
+					</div>
+					<div
+						id="contact-response"
+						class="submitted-wrapper hide-content"
 					>
-						<label for="fullName">Full name</label>
-						<input
-							type="text"
-							id="fullName"
-							name="fullName"
-							placeholder="Your name"
-							required
-						/>
-						<br />
-						<label for="email">Email</label>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							placeholder="Your email"
-							required
-						/>
-						<br />
-						<label for="message">Message</label>
-						<textarea
-							id="message"
-							name="message"
-							placeholder="Enter your message..."
-							required
-						></textarea>
-						<br />
-						<button class="submit-btn">Submit</button>
-					</form>
+						<i
+							id="close-form-response"
+							class="fas fa-times"
+							onclick="restoreForm()"
+						></i>
+						<i id="sent-icon" class="far fa-paper-plane"></i>
+						<p>Thanks, your message is on its way!</p>
+					</div>
 				</div>
-				<!-- <div class="submitted-wrapper">
-					<p>Thanks for your message!</p>
-
-					<p>An email is on it's way to my inbox</p>
-				</div> -->
 			</div>
 		</section>
 		<footer>

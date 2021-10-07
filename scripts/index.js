@@ -20,6 +20,7 @@ function closeNav() {
 
 function openNav() {
 	nav.classList.add('show-nav');
+	nav.classList.add('fade-in-right');
 	nav.classList.remove('hide-nav');
 	openNavBtn.classList.add('hide-nav');
 	openNavBtn.classList.remove('show-nav');
@@ -38,10 +39,14 @@ function openNav() {
 // Form submit
 
 const form = document.getElementById('contact-form');
+const formWrapper = document.getElementById('contact-wrapper');
+const msg = document.getElementById('contact-response');
 
 form.onsubmit = (e) => {
 	handleForm(e);
 	form.reset();
+	formWrapper.classList.add('hide-content');
+	msg.classList.remove('hide-content');
 };
 
 function handleForm(e) {
@@ -75,6 +80,12 @@ function handleForm(e) {
 				console.log(err);
 			}
 		});
+}
+
+function restoreForm() {
+	console.log('clicked');
+	msg.classList.add('hide-content');
+	formWrapper.classList.remove('hide-content');
 }
 
 // scroll animations

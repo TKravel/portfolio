@@ -283,7 +283,6 @@ nav a {
 }
 
 .about-wrapper {
-	display: block;
 	flex-basis: 75%;
 	text-align: center;
 	height: 75%;
@@ -432,15 +431,17 @@ nav a {
 	width: 80%;
 }
 
-.contact-wrapper {
+.contact-container {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 	height: 500px;
 	width: 325px;
 	border: 1px solid #000;
 	border-radius: 0.3rem;
 	color: var(--main-dark);
 	background-color: var(--main-white);
+	text-align: center;
 	padding: 1rem;
 	margin: auto;
 	box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
@@ -452,6 +453,7 @@ nav a {
 .contact-form {
 	display: flex;
 	flex-wrap: wrap;
+	text-align: left;
 }
 
 .contact-form label,
@@ -509,6 +511,31 @@ textarea {
 
 .submit-btn:focus {
 	outline: none;
+}
+
+#contact-response {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+}
+
+#close-form-response {
+	position: absolute;
+	display: block;
+	top: 0.3em;
+	left: 0.4em;
+	color: var(--main-blue);
+	font-size: 2em;
+}
+
+#sent-icon {
+	font-size: 6em;
+	padding-bottom: 2rem;
+}
+
+.hide-content {
+	display: none !important;
 }
 
 @media screen and(max-width: 550px) {
