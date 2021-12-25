@@ -61,7 +61,9 @@ const download = () => {
 				// created by calling URL.createObjectURL()
 				// once we have finished using an object URL, let the
 				// browser know not to keep the reference to the file any longer.
-				window.URL.revokeObjectURL(url);
+				setTimeout(() => {
+					window.URL.revokeObjectURL(url);
+				});
 			}
 		})
 		.catch((err) => {
