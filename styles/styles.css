@@ -348,6 +348,7 @@ nav a {
 /* Projects */
 
 #projects {
+	text-align: center;
 }
 
 .project-wrapper {
@@ -456,8 +457,33 @@ nav a {
 	color: #0064b5;
 }
 
-.disabled-link {
-	color: var(--main-mid) !important;
+.download-btn {
+	border: 1px solid #fff;
+	border-radius: 0.5em;
+	color: var(--main-white);
+	background-color: inherit;
+	font-size: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.3em;
+	width: 15em;
+	margin: auto;
+	box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.download-btn:hover {
+	cursor: pointer;
+	box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#download-icon {
+	margin-top: -0.125em;
+	margin-right: 0.6em;
 }
 
 @media screen and(max-width: 550px) {
@@ -614,6 +640,23 @@ textarea {
 footer {
 	background-color: var(--main-dark);
 	color: var(--main-blue);
+}
+
+.footer-contact-container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.footer-social-container {
+	display: flex;
+	justify-content: center;
+}
+
+footer a {
+	color: inherit;
+	margin: 1em;
 }
 
 footer p {
