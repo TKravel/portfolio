@@ -155,9 +155,47 @@ nav a {
 	text-decoration: none;
 }
 
+.nav-contact {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.nav-icon {
+	font-size: 2em;
+}
+
+.nav-dl-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+
+.nav-dl-btn {
+	background-color: inherit;
+	border: none;
+	color: inherit;
+	font-size: 1.5em;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.nav-social-container {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
 @media screen and (min-width: 550px) {
 	#open-nav-btn,
-	#close-nav-btn {
+	#close-nav-btn,
+	.nav-contact {
 		display: none;
 	}
 }

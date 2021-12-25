@@ -34,7 +34,42 @@ function openNav() {
 		});
 	}
 }
-// openNav.addEventListener('click', () => {});
+
+// Fetch resume
+
+const download = () => {
+	// young-sierra-17248.herokuapp.com/contact/resorces/Tim_Kravel_Resume.pfd
+	fetch('http://localhost:3000/downloads', {
+		method: 'GET',
+	})
+		.then((response) => response.blob())
+		.then((data) => {
+			if (data) {
+				var a = document.createElement('a');
+				// creating a reference to the file
+				var url = window.URL.createObjectURL(data);
+				// setting anchor tag's href attribute to the blob's URL
+				a.href = url;
+				// setting anchor tag's download attribute to the filename
+				a.download = 'Resume.pdf';
+				document.body.append(a);
+				// click on the <a> tag
+				a.click();
+				// after clicking it, remove it from the DOM
+				a.remove();
+				// release an existing object URL which was previously
+				// created by calling URL.createObjectURL()
+				// once we have finished using an object URL, let the
+				// browser know not to keep the reference to the file any longer.
+				window.URL.revokeObjectURL(url);
+			}
+		})
+		.catch((err) => {
+			if (err) {
+				console.log(err);
+			}
+		});
+};
 
 // Form submit
 
