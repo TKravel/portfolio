@@ -38,8 +38,8 @@ function openNav() {
 // Fetch resume
 
 const download = () => {
-	// young-sierra-17248.herokuapp.com/contact/resorces/Tim_Kravel_Resume.pfd
-	fetch('http://localhost:3000/downloads', {
+	//
+	fetch('http://young-sierra-17248.herokuapp.com/contact/downloads.pfd', {
 		method: 'GET',
 	})
 		.then((response) => response.blob())
