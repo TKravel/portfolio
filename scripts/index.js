@@ -51,7 +51,7 @@ const download = () => {
 				// setting anchor tag's href attribute to the blob's URL
 				a.href = url;
 				// setting anchor tag's download attribute to the filename
-				a.download = 'Resume.pdf';
+				a.download = 'Resume';
 				document.body.append(a);
 				// click on the <a> tag
 				a.click();
