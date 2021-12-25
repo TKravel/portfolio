@@ -39,7 +39,7 @@ function openNav() {
 
 const download = () => {
 	//
-	fetch('https://young-sierra-17248.herokuapp.com/downloads.pfd', {
+	fetch('https://young-sierra-17248.herokuapp.com/downloads', {
 		method: 'GET',
 	})
 		.then((response) => response.blob())
