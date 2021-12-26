@@ -35,16 +35,33 @@ function openNav() {
 	}
 }
 
-// Fetch resume
+// Fetch resume toggle spinners
+
+const togglePageDownloadBtn = () => {
+	const button = document.getElementById('download-btn');
+	const spinner = document.getElementById('download-spinner');
+
+	if (button.classList.contains('hide-content')) {
+		button.classList.remove('hide-content');
+		spinner.classList.add('hide-content');
+	} else {
+		button.classList.add('hide-content');
+		spinner.classList.remove('hide-content');
+	}
+};
 
 const download = () => {
+	// const spinners = document.getElementsByClassName('download-spinner')
+	// const buttons = document.get
 	//
+	togglePageDownloadBtn();
 	fetch('https://young-sierra-17248.herokuapp.com/downloads', {
 		method: 'GET',
 	})
 		.then((response) => response.blob())
 		.then((data) => {
 			if (data) {
+				togglePageDownloadBtn();
 				var a = document.createElement('a');
 				// creating a reference to the file
 				var url = window.URL.createObjectURL(data);
@@ -63,7 +80,7 @@ const download = () => {
 				// browser know not to keep the reference to the file any longer.
 				setTimeout(() => {
 					window.URL.revokeObjectURL(url);
-				});
+				}, 4000);
 			}
 		})
 		.catch((err) => {

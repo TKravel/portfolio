@@ -38,9 +38,12 @@
 			<div class="nav-contact">
 				<div class="nav-dl-container">
 					<i class="fas fa-file-pdf nav-icon"></i
-					><button onClick="download()" class="nav-dl-btn">
+					><button onClick="download(e)" class="nav-dl-btn">
 						Resume
 					</button>
+				</div>
+				<div class="download-spinner hide-content">
+					<i class="fas fa-spinner fa-spin fa-2x"></i>
 				</div>
 				<div class="nav-social-container">
 					<a href="https://github.com/TKravel" target="_blank"
@@ -171,9 +174,20 @@
 						</div>
 					</div>
 				</div>
-				<div onClick="download()" class="download-btn" role="button">
+				<div
+					onClick="download()"
+					class="download-btn"
+					role="button"
+					id="download-btn"
+				>
 					<i class="fas fa-file-pdf" id="download-icon"></i
 					><span>Download my resume</span>
+				</div>
+				<div
+					id="download-spinner"
+					class="download-spinner hide-content"
+				>
+					<i class="fas fa-spinner fa-spin fa-2x"></i>
 				</div>
 			</div>
 		</section>

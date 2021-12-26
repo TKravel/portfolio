@@ -192,6 +192,12 @@ nav a {
 	width: 100%;
 }
 
+.download-spinner {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
 @media screen and (min-width: 550px) {
 	#open-nav-btn,
 	#close-nav-btn,
