@@ -37,12 +37,18 @@
 			</ul>
 			<div class="nav-contact">
 				<div class="nav-dl-container">
-					<i class="fas fa-file-pdf nav-icon"></i
-					><button onClick="download(e)" class="nav-dl-btn">
-						Resume
+					<button
+						id="nav-download-btn"
+						onClick="startDownload(event)"
+						class="nav-dl-btn"
+					>
+						<i class="fas fa-file-pdf"></i>Resume
 					</button>
 				</div>
-				<div class="download-spinner hide-content">
+				<div
+					id="nav-download-spinner"
+					class="download-spinner hide-content"
+				>
 					<i class="fas fa-spinner fa-spin fa-2x"></i>
 				</div>
 				<div class="nav-social-container">
@@ -175,7 +181,7 @@
 					</div>
 				</div>
 				<div
-					onClick="download()"
+					onClick="startDownload(event)"
 					class="download-btn"
 					role="button"
 					id="download-btn"

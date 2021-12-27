@@ -37,31 +37,47 @@ function openNav() {
 
 // Fetch resume toggle spinners
 
-const togglePageDownloadBtn = () => {
-	const button = document.getElementById('download-btn');
-	const spinner = document.getElementById('download-spinner');
+const startDownload = (event) => {
+	const elementID = event.currentTarget.id;
+	let button;
+	let spinner;
 
-	if (button.classList.contains('hide-content')) {
-		button.classList.remove('hide-content');
-		spinner.classList.add('hide-content');
+	console.log(elementID);
+
+	if (elementID === 'download-btn') {
+		button = document.getElementById('download-btn');
+		spinner = document.getElementById('download-spinner');
 	} else {
-		button.classList.add('hide-content');
-		spinner.classList.remove('hide-content');
+		button = document.getElementById('nav-download-btn');
+		spinner = document.getElementById('nav-download-spinner');
 	}
+
+	console.log(button);
+	console.log(spinner);
+
+	const toggleSpinner = () => {
+		if (button.classList.contains('hide-content')) {
+			console.log('true');
+			button.classList.remove('hide-content');
+			spinner.classList.add('hide-content');
+		} else {
+			console.log('False');
+			button.classList.add('hide-content');
+			spinner.classList.remove('hide-content');
+		}
+	};
+	toggleSpinner();
+	download(toggleSpinner);
 };
 
-const download = () => {
-	// const spinners = document.getElementsByClassName('download-spinner')
-	// const buttons = document.get
-	//
-	togglePageDownloadBtn();
+const download = (callback) => {
 	fetch('https://young-sierra-17248.herokuapp.com/downloads', {
 		method: 'GET',
 	})
 		.then((response) => response.blob())
 		.then((data) => {
 			if (data) {
-				togglePageDownloadBtn();
+				callback();
 				var a = document.createElement('a');
 				// creating a reference to the file
 				var url = window.URL.createObjectURL(data);
