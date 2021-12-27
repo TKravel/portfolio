@@ -68,14 +68,19 @@
 				<img
 					id="profileImg"
 					src="img/profile-jpg.jpg"
-					alt="Profile picture"
+					alt="Picture of Tim Kravel"
 				/>
 			</div>
 			<div class="hero-wrapper">
 				<h1 id="heroHeader" class="section-info">
 					Hi! I'm Tim Kravel.
 				</h1>
-				<a id="scroll-down-arrow" class="section-info" href="#about"
+				<a
+					id="scroll-down-arrow"
+					class="section-info"
+					href="#about"
+					role="button"
+					aria-label="Scroll down"
 					><i class="fas fa-long-arrow-alt-down fa-2x"></i
 				></a>
 			</div>
@@ -85,19 +90,40 @@
 				<h2 class="sectionHeader">Who am I?</h2>
 				<div class="about-wrapper">
 					<p>
-						I'm a full stack developer looking for a team to create
+						I'm a junior developer looking for a team to create
 						amazing work with.
 					</p>
 					<p>
-						I started with command line java programs. Shortly after
-						a friend suggested I look into front end development due
-						to my creative nature. My need to figure out how things
-						work led me to full stack development.
+						My programming journey started on a CNC machine,
+						sculpting precision parts for the aerospace industry
+						using G-code programs. As my proficiency increased so
+						did my urge to explore other types of programming. After
+						two years of writing G-code I decided to buy some books
+						on Java.
 					</p>
 					<p>
-						When I'm not coding you can find me either hanging out
-						with my son at a park, enjoying time in nature, or
-						creating art!
+						In my free time I began creating simple command line
+						Java programs. A friend suggested I look into front end
+						development due to my creative nature. It wasn’t long
+						until I found myself able to create websites. I still
+						had a need to figure out how everything connected. Where
+						did that form go, what happens to my requests, how do I
+						power my site with data from other sources?
+					</p>
+					<p>
+						My desire to learn pushed me further along the developer
+						roadmap. I started to explore the back end, adding
+						technologies such Node.js, Express, databases, and
+						libraries for handling users and requests. Yet my need
+						to learn more kept pushing me and I returned to the
+						front end, learning React to increase my client-side
+						capabilities.
+					</p>
+					<p>
+						When I'm not studying something new about programming
+						you can find me hanging out with my son at a park
+						enjoying nature, creating memories with my family, or
+						fishing!
 					</p>
 				</div>
 			</div>
@@ -107,7 +133,11 @@
 				<h2 class="sectionHeader">Check out my work!</h2>
 				<div class="project-wrapper">
 					<div class="project js-scroll fade-in-right">
-						<img class="project-img" src="img/parent-helper.jpg" />
+						<img
+							class="project-img"
+							src="img/parent-helper.jpg"
+							alt="Screenshot of Parent helper app"
+						/>
 						<h4 class="project-header">Parent Helper</h4>
 						<p>
 							A simple tracker to help keep track of your childs
@@ -132,7 +162,11 @@
 						</ul>
 					</div>
 					<div class="project js-scroll fade-in-right">
-						<img class="project-img" src="img/quit-calc.jpg" />
+						<img
+							class="project-img"
+							src="img/quit-calc.jpg"
+							alt="Screenshot of Quit smoking App"
+						/>
 						<h4 class="project-header">Quit smoking calculator</h4>
 						<p>
 							Quit smoking by tracking goals and savings. Built
@@ -156,13 +190,17 @@
 						</ul>
 					</div>
 					<div class="project js-scroll fade-in-right">
-						<img class="project-img" src="img/weather-app.jpg" />
+						<img
+							class="project-img"
+							src="img/weather-app.jpg"
+							alt="Screenshot of weather app"
+						/>
 						<h4 class="project-header">Weather app</h4>
 						<p>
 							A React weather app powered by data from
 							weatherAPI.com proxied through a Express server.
 						</p>
-						<div class="project-links">
+						<ul class="project-links">
 							<li>
 								<a
 									target="_blank"
@@ -177,12 +215,12 @@
 									>Demo</a
 								>
 							</li>
-						</div>
+						</ul>
 					</div>
 				</div>
 				<div
 					onClick="startDownload(event)"
-					class="download-btn"
+					class="js-scroll fade-in-bottom"
 					role="button"
 					id="download-btn"
 				>

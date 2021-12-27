@@ -5,11 +5,6 @@ const closeNavBtn = document.getElementById('close-nav-btn');
 const nav = document.getElementsByTagName('nav')[0];
 const navLinks = document.getElementsByClassName('nav-link');
 
-// closeNavBtn.addEventListener('click', () => {
-// 	nav.style.classList.remove('nav-open');
-// 	openNavBtn.classList.add('nav-open');
-// });
-
 function closeNav() {
 	console.log('click');
 	nav.classList.remove('show-nav');
@@ -35,7 +30,7 @@ function openNav() {
 	}
 }
 
-// Fetch resume toggle spinners
+// Fetch resume, toggle spinners
 
 const startDownload = (event) => {
 	const elementID = event.currentTarget.id;
@@ -79,21 +74,12 @@ const download = (callback) => {
 			if (data) {
 				callback();
 				var a = document.createElement('a');
-				// creating a reference to the file
 				var url = window.URL.createObjectURL(data);
-				// setting anchor tag's href attribute to the blob's URL
 				a.href = url;
-				// setting anchor tag's download attribute to the filename
-				a.download = 'Resume';
+				a.download = 'Tim_Kravel_Resume';
 				document.body.append(a);
-				// click on the <a> tag
 				a.click();
-				// after clicking it, remove it from the DOM
 				a.remove();
-				// release an existing object URL which was previously
-				// created by calling URL.createObjectURL()
-				// once we have finished using an object URL, let the
-				// browser know not to keep the reference to the file any longer.
 				setTimeout(() => {
 					window.URL.revokeObjectURL(url);
 				}, 4000);
