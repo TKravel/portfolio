@@ -105,26 +105,39 @@
 		<section id="about">
 			<div id="bio-container" class="js-scroll fade-in-bottom">
 				<h2 class="sectionHeader">Hi, I'm Tim Kravel!</h2>
-				<div class="">
-					<p>
-						&emsp;I am a junior developer looking for a team to
-						create amazing work with!
-					</p>
-					<p>
-						&emsp;I've spent almost a decade programming with G-code
-						to create aerospace parts from raw materials. My love
-						for learning and problem solving pushed me to explore
-						other programming languages in my free time. I found a
-						strong passion for software development on both sides of
-						the stack. I am dedicated in steering my career path
-						from computer numerical control programming to software
-						development.
-					</p>
-					<p>
-						&emsp;When I'm not coding you can find me and the
-						coolest little guy in the world exploring parks,
-						enjoying nature, or fishing!
-					</p>
+
+				<p>
+					&emsp;I am a junior developer looking for a team to create
+					amazing work with!
+				</p>
+				<p>
+					&emsp;I've spent almost a decade programming with G-code to
+					create aerospace parts from raw materials. My love for
+					learning and problem solving pushed me to explore other
+					programming languages in my free time. I found a strong
+					passion for software development on both sides of the stack.
+					I am dedicated in steering my career path from computer
+					numerical control programming to software development.
+				</p>
+				<p>
+					&emsp;When I'm not coding you can find me and the coolest
+					little guy in the world exploring parks, enjoying nature, or
+					fishing!
+				</p>
+				<div
+					onClick="startDownload(event)"
+					class="js-scroll fade-in-bottom"
+					role="button"
+					id="download-btn"
+				>
+					<i class="fas fa-file-pdf" id="download-icon"></i
+					><span>Download my resume</span>
+				</div>
+				<div
+					id="download-spinner"
+					class="download-spinner hide-content"
+				>
+					<i class="fas fa-spinner fa-spin fa-2x"></i>
 				</div>
 			</div>
 			<div id="skill-container" class="js-scroll fade-in-right">
@@ -182,107 +195,162 @@
 		<section id="projects">
 			<div class="js-scroll fade-in-bottom">
 				<h2 class="sectionHeader">Check out my work!</h2>
-				<div class="project-wrapper">
-					<div class="project js-scroll fade-in-right">
+
+				<div class="project js-scroll fade-in-right">
+					<div class="project-info">
+						<h3 class="project-header">Parent Helper</h3>
 						<img
 							class="project-img"
 							src="img/parent-helper.jpg"
 							alt="Screenshot of Parent helper app"
 						/>
-						<h4 class="project-header">Parent Helper</h4>
+
 						<p>
 							A simple tracker to help keep track of your childs
 							needs. Built using the MERN stack
 						</p>
-
-						<ul class="project-links">
+						<div class="link-container">
+							<a
+								target="_blank"
+								href="https://github.com/TKravel/parent-helper"
+								>View code</a
+							>
+							<span style="margin: 1em"><strong>|</strong></span>
+							<a
+								target="_blank"
+								href="http://tranquil-atoll-54937.herokuapp.com/"
+								>Live demo</a
+							>
+						</div>
+					</div>
+					<div class="project-specs">
+						<h4>Technologies used:</h4>
+						<p>
+							Front-end: React, Hooks, React Router, Functional
+							components
+						</p>
+						<ul class="tech-list">
+							<li>Login, register, and access the app</li>
+							<li>Save and edit daily data</li>
+							<li>View past data in a paginated table</li>
+						</ul>
+						<p>
+							Back-end: Node.js, Express.js, MongoDB Cloud Atlas
+						</p>
+						<ul class="tech-list">
 							<li>
-								<a
-									target="_blank"
-									href="https://github.com/TKravel/parent-helper"
-									>Code</a
-								>
+								Controls user authentication and authorization
+								through the use of JsonWebTokens
 							</li>
+							<li>Password encryption using Bcrypt.js</li>
 							<li>
-								<a
-									target="_blank"
-									href="http://tranquil-atoll-54937.herokuapp.com/"
-									>Demo</a
-								>
+								Handle and serve data from MongoDB Cloud Atlas
 							</li>
 						</ul>
 					</div>
-					<div class="project js-scroll fade-in-right">
+				</div>
+				<div class="project js-scroll fade-in-right">
+					<div class="project-info">
+						<h3 class="project-header">Quit smoking calculator</h3>
 						<img
 							class="project-img"
 							src="img/quit-calc.jpg"
 							alt="Screenshot of Quit smoking App"
 						/>
-						<h4 class="project-header">Quit smoking calculator</h4>
+
 						<p>
 							Quit smoking by tracking goals and savings. Built
 							using the MERN stack
 						</p>
-						<ul class="project-links">
+						<div class="link-container">
+							<a
+								target="_blank"
+								href="https://github.com/TKravel/quit-calc-client"
+								>View code</a
+							>
+							<span style="margin: 1em"><strong>|</strong></span>
+							<a
+								target="_blank"
+								href="https://condescending-boyd-227f42.netlify.app/"
+								>Live demo</a
+							>
+						</div>
+					</div>
+					<div class="project-specs">
+						<h4>Technologies used:</h4>
+						<p>
+							Front-end: React, Hooks, React Router, Functional
+							Material UI components
+						</p>
+						<ul class="tech-list">
 							<li>
-								<a
-									target="_blank"
-									href="https://github.com/TKravel/quit-calc-client"
-									>Code</a
-								>
+								Login, register, and access user functionality
 							</li>
+							<li>See savings since quiting</li>
+							<li>Create, track, collect goals</li>
+						</ul>
+						<p>
+							Back-end: Node.js, Express.js, MongoDB Cloud Atlas
+						</p>
+						<ul class="tech-list">
 							<li>
-								<a
-									target="_blank"
-									href="https://condescending-boyd-227f42.netlify.app/"
-									>Demo</a
-								>
+								Controls user authentication and authorization
+								through the use of JsonWebTokens
+							</li>
+							<li>Password encryption using Bcrypt.js</li>
+							<li>
+								Handle and serve data from MongoDB Cloud Atlas
 							</li>
 						</ul>
 					</div>
-					<div class="project js-scroll fade-in-right">
+				</div>
+
+				<div class="project js-scroll fade-in-right">
+					<div class="project-info">
+						<h3 class="project-header">Weather app</h3>
 						<img
 							class="project-img"
 							src="img/weather-app.jpg"
 							alt="Screenshot of weather app"
 						/>
-						<h4 class="project-header">Weather app</h4>
+
 						<p>
 							A React weather app powered by data from
 							weatherAPI.com proxied through a Express server.
 						</p>
-						<ul class="project-links">
+						<div class="link-container">
+							<a
+								target="_blank"
+								href="https://github.com/TKravel/weather-app-client"
+								>View code</a
+							>
+							<span style="margin: 1em"><strong>|</strong></span>
+							<a
+								target="_blank"
+								href="https://eloquent-bardeen-6340b4.netlify.app"
+								>Live demo</a
+							>
+						</div>
+					</div>
+					<div class="project-specs">
+						<h4>Technologies used:</h4>
+						<p>Front-end: React, Hooks, Functional components</p>
+						<ul class="tech-list">
 							<li>
-								<a
-									target="_blank"
-									href="https://github.com/TKravel/weather-app-client"
-									>Code</a
-								>
+								Display current, 24 hour, and 3 day forecasts
 							</li>
 							<li>
-								<a
-									target="_blank"
-									href="https://eloquent-bardeen-6340b4.netlify.app"
-									>Demo</a
-								>
+								Search by city, zip code, or current location
 							</li>
+							<li>Save location for future searches</li>
+						</ul>
+						<p>Back-end: Node.js, Express.js</p>
+						<ul class="tech-list">
+							<li>Proxies API calls to protect API key</li>
+							<li>Sends search location to API</li>
+							<li>Returns data or handles error</li>
 						</ul>
 					</div>
-				</div>
-				<div
-					onClick="startDownload(event)"
-					class="js-scroll fade-in-bottom"
-					role="button"
-					id="download-btn"
-				>
-					<i class="fas fa-file-pdf" id="download-icon"></i
-					><span>Download my resume</span>
-				</div>
-				<div
-					id="download-spinner"
-					class="download-spinner hide-content"
-				>
-					<i class="fas fa-spinner fa-spin fa-2x"></i>
 				</div>
 			</div>
 		</section>
