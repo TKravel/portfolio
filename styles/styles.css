@@ -84,6 +84,7 @@ html {
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
 	width: 100%;
+	margin-bottom: 1em;
 	align-self: center;
 	/* grid-area: header; */
 }
@@ -393,7 +394,7 @@ nav a {
 	}
 	.skill-icon {
 		width: auto;
-		height: 30vw;
+		height: 20vw;
 	}
 }
 
@@ -449,11 +450,11 @@ nav a {
 }
 
 .scrolled.fade-in-right {
-	animation: fade-in-right 1s ease-in;
+	animation: fade-in-right 1s ease-in-out both;
 }
 
 .scrolled.fade-in-bottom {
-	animation: fade-in-bottom 500ms ease-in;
+	animation: fade-in-bottom 500ms ease-in-out both;
 }
 
 @keyframes fade-in-right {
