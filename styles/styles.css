@@ -296,8 +296,9 @@ nav a {
 }
 
 .hero-wrapper p {
+	font-size: 1;
 	width: 100%;
-	padding-top: 2em;
+	padding-bottom: 0.5em;
 }
 
 #heroHeader {
@@ -325,23 +326,74 @@ nav a {
 	flex-wrap: wrap;
 	line-height: 1.7;
 	align-items: center;
+	width: 100%;
 }
 
-.about-wrapper {
+#bio-container {
 	text-align: left;
 	height: 75%;
+	width: 60%;
 	padding: 1.5em 4em 0 4em;
 	align-content: center;
 	/* grid-area: section-info; */
 }
 
-.about-wrapper p {
+#bio-container p {
 	padding: 0.6rem;
 }
 
+#skill-container {
+	background-color: var(--main-dark);
+	border-radius: 0.5em;
+	color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 2em 3em 2em 0;
+	padding: 1em 1em 1em 1em;
+	height: 85%;
+	width: 30%;
+}
+
+#skill-container h3 {
+	text-align: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.icon-container {
+	background-color: var(--main-white);
+	border: 1px solid var(--main-dark);
+	border-radius: 0.5em;
+	color: #000;
+	margin: 0.3em;
+	padding: 0.5em;
+	text-align: center;
+}
+
+.skill-icon {
+	width: 4em;
+	height: 4em;
+}
+
 @media screen and (max-width: 550px) {
-	.about-wrapper {
+	#bio-container {
+		margin: 2em auto 2em auto;
 		padding: 0 0.8em 0 0.8em !important;
+		width: 100%;
+	}
+	#skill-container {
+		width: 90%;
+		margin: 1em auto 2em auto;
+	}
+
+	.icon-container {
+		width: 35vw;
+		height: auto;
+	}
+	.skill-icon {
+		width: auto;
+		height: 30vw;
 	}
 }
 
@@ -502,6 +554,10 @@ nav a {
 /* Contact */
 
 #contact {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
 }
 .contact-wrapper p {
 	margin: 1rem auto 1rem auto;
