@@ -53,24 +53,31 @@
 				<li class="nav-link"><a href="#about">About</a></li>
 				<li class="nav-link"><a href="#projects">Projects</a></li>
 				<li class="nav-link"><a href="#contact">Contact</a></li>
+				<li class="nav-contact">
+					<div>
+						<div class="nav-dl-container">
+							<button
+								id="nav-download-btn"
+								onClick="startDownload(event)"
+								class="nav-dl-btn"
+							>
+								<i
+									id="nav-download-icon"
+									class="fas fa-file-pdf"
+								></i
+								>Resume
+							</button>
+						</div>
+						<div
+							id="nav-download-spinner"
+							class="download-spinner hide-content"
+						>
+							<i class="fas fa-spinner fa-spin fa-2x"></i>
+						</div>
+					</div>
+				</li>
 			</ul>
 			<div class="nav-contact">
-				<div class="nav-dl-container">
-					<button
-						id="nav-download-btn"
-						onClick="startDownload(event)"
-						class="nav-dl-btn"
-					>
-						<i id="nav-download-icon" class="fas fa-file-pdf"></i
-						>Resume
-					</button>
-				</div>
-				<div
-					id="nav-download-spinner"
-					class="download-spinner hide-content"
-				>
-					<i class="fas fa-spinner fa-spin fa-2x"></i>
-				</div>
 				<div class="nav-social-container">
 					<a href="https://github.com/TKravel" target="_blank"
 						><i class="fab fa-github-square nav-icon"></i

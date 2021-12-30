@@ -159,7 +159,7 @@ nav a {
 	text-decoration: none;
 }
 
-.nav-contact {
+/* .nav-contact {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -167,7 +167,7 @@ nav a {
 	flex-wrap: wrap;
 	width: 100%;
 	margin-bottom: 1em;
-}
+} */
 
 .nav-icon {
 	font-size: 2em;
@@ -185,8 +185,8 @@ nav a {
 .nav-dl-btn {
 	background-color: inherit;
 	border: none;
-	color: inherit;
-	font-size: 1.5em;
+	color: var(--main-dark);
+	font-size: 1em;
 	font-family: 'roboto-condensed', sans-serif !important;
 	font-weight: 700;
 }
