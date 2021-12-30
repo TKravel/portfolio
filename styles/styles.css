@@ -449,11 +449,11 @@ nav a {
 }
 
 .scrolled.fade-in-right {
-	animation: fade-in-right 1s ease-in-out both;
+	animation: fade-in-right 1s ease-in;
 }
 
 .scrolled.fade-in-bottom {
-	animation: fade-in-bottom 500ms ease-in-out both;
+	animation: fade-in-bottom 500ms ease-in;
 }
 
 @keyframes fade-in-right {
