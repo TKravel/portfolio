@@ -159,16 +159,6 @@ nav a {
 	text-decoration: none;
 }
 
-/* .nav-contact {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	margin-bottom: 1em;
-} */
-
 .nav-icon {
 	font-size: 2em;
 }
@@ -179,7 +169,6 @@ nav a {
 	align-items: center;
 	height: 100%;
 	width: 100%;
-	margin-bottom: 0.5em;
 }
 
 .nav-dl-btn {
@@ -195,10 +184,15 @@ nav a {
 	margin-right: 0.2em;
 }
 
+#nav-download-spinner {
+	color: var(--main-dark);
+}
+
 .nav-social-container {
 	display: flex;
 	justify-content: space-around;
 	width: 100%;
+	margin-top: 3em;
 }
 
 .download-spinner {
