@@ -583,6 +583,7 @@ nav a {
 		margin-bottom: 1em;
 	}
 	.project-specs p {
+		width: 100%;
 		margin: 0 auto 1em auto;
 	}
 	.project-specs ul {
