@@ -609,6 +609,11 @@ nav a {
 		margin: 2em auto 2em auto;
 		padding: 0;
 	}
+
+	.project p {
+		padding: 0 0 0 0;
+	}
+
 	.project-info {
 		width: 100%;
 	}
@@ -627,10 +632,10 @@ nav a {
 	}
 	.project-specs p {
 		width: 100%;
-		margin: 0 auto 1em auto;
+		margin: 1em auto 0.5em auto;
 	}
 	.project-specs ul {
-		display: none;
+		width: 75%;
 	}
 }
 
