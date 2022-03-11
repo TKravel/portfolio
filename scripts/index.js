@@ -30,6 +30,166 @@ function openNav() {
 	}
 }
 
+// Landing animation
+
+const fillerDigits = document.getElementsByClassName('fillerDigits');
+const descriptiveWord = document.getElementById('descriptiveWord');
+const digits = [
+	'0',
+	'1',
+	'2',
+	'3',
+	'4',
+	'5',
+	'6',
+	'7',
+	'8',
+	'9',
+	'A',
+	'B',
+	'C',
+	'D',
+	'E',
+	'F',
+	'G',
+	'H',
+	'I',
+	'J',
+	'K',
+	'L',
+	'M',
+	'N',
+	'O',
+	'P',
+	'Q',
+	'R',
+	'S',
+	'T',
+	'U',
+	'V',
+	'W',
+	'X',
+	'Y',
+	'Z',
+];
+const selectedWords = [
+	'Artist',
+	'Creative',
+	'Adaptable',
+	'Problem solver',
+	'Tim Kravel',
+	'Front-end Developer',
+];
+
+function randomizeDigit() {
+	const randomNum = Math.floor(Math.random() * (digits.length - 1));
+	const char = digits[randomNum];
+	return char;
+}
+const createStartingString = (num) => {
+	const desiredLength = num * 3;
+	let startingStr = '';
+	for (let i = 0; i < desiredLength; i++) {
+		startingStr += randomizeDigit();
+	}
+	return startingStr;
+};
+
+const decodeStep = (str, num) => {
+	const encodedWord = str;
+	const decodedWordLength = num;
+
+	if (encodedWord.length > decodedWordLength) {
+		const arr = encodedWord.split('');
+		arr.shift();
+		arr.pop();
+		arr.forEach((item, idx) => {
+			arr[idx] = randomizeDigit();
+		});
+		const result = arr.join('');
+		return result;
+	} else {
+		return;
+	}
+};
+
+const decodeWord = (word, index) => {
+	const decodedStr = word;
+	const currentIndex = index;
+	const isOdd = decodedStr.length % 2 === 0 ? true : false;
+
+	if (isOdd && currentIndex === decodedStr.length - 1) {
+		return decodedStr;
+	} else {
+		let newArr = [];
+		const arr = decodedStr.split('');
+		arr.forEach((item, idx) => {
+			if (idx <= currentIndex) {
+				newArr.push(item);
+			} else if (idx >= decodedStr.length - 1 - currentIndex) {
+				newArr.push(item);
+			} else {
+				newArr.push(randomizeDigit());
+			}
+		});
+		const result = newArr.join('');
+		return result;
+	}
+};
+
+const injectText = (str) => {
+	descriptiveWord.textContent = str;
+};
+
+const landingAnimation = () => {
+	let wordIdx = 0;
+	let currentWord = selectedWords[wordIdx];
+	let encodedWord = '';
+	let decodingIndex = 0;
+	let stepSpeed = 100;
+
+	const decodingAnimation = () => {
+		console.log(decodingIndex, currentWord.length / 2);
+		if (decodingIndex >= (currentWord.length - 2) / 2) {
+			stepSpeed = 1000;
+		}
+		if (encodedWord === '') {
+			encodedWord = createStartingString(currentWord.length);
+			injectText(encodedWord);
+		} else if (encodedWord.length > currentWord.length) {
+			encodedWord = decodeStep(encodedWord, currentWord.length);
+			injectText(encodedWord);
+		} else if (
+			encodedWord.length === currentWord.length &&
+			encodedWord !== currentWord
+		) {
+			encodedWord = decodeWord(currentWord, decodingIndex);
+			injectText(encodedWord);
+			decodingIndex++;
+		} else if (encodedWord === currentWord) {
+			// do animation
+			decodingIndex = 0;
+			if (wordIdx === selectedWords.length - 1) {
+				return;
+			} else {
+				stepSpeed = 100;
+				wordIdx++;
+				currentWord = selectedWords[wordIdx];
+				encodedWord = createStartingString(currentWord.length);
+				injectText(encodedWord);
+			}
+		}
+		setTimeout(() => {
+			decodingAnimation();
+		}, stepSpeed);
+	};
+	decodingAnimation();
+};
+
+window.addEventListener('load', () => {
+	landingAnimation();
+});
+
 // Fetch resume, toggle spinners
 
 const startDownload = (event) => {
