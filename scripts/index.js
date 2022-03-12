@@ -33,7 +33,7 @@ function openNav() {
 // Landing animation
 
 const fillerDigits = document.getElementsByClassName('fillerDigits');
-const descriptiveWord = document.getElementById('descriptiveWord');
+const decoderTypewriter = document.getElementById('decoderTypewriter');
 const digits = [
 	'0',
 	'1',
@@ -95,6 +95,35 @@ const createStartingString = (num) => {
 	return startingStr;
 };
 
+const createEncodedString = (str, num) => {
+	if (num === 0) {
+		const arr = str.split('');
+		const newArr = [];
+		arr.forEach(() => {
+			newArr.push(randomizeDigit());
+		});
+		const result = newArr.join('');
+		return result;
+	} else {
+		const arr = str.split('');
+		const newArr = [];
+		arr.forEach((item, index) => {
+			if (index < num) {
+				console.log('less ' + index + num);
+				newArr.push(item);
+			} else if (index > str.length - 1 - num) {
+				console.log('greater ' + index + num);
+				newArr.push(item);
+			} else {
+				console.log('middle ' + index + num);
+				newArr.push(randomizeDigit());
+			}
+		});
+		const result = newArr.join('');
+		return result;
+	}
+};
+
 const decodeStep = (str, num) => {
 	const encodedWord = str;
 	const decodedWordLength = num;
@@ -138,7 +167,15 @@ const decodeWord = (word, index) => {
 };
 
 const injectText = (str) => {
-	descriptiveWord.textContent = str;
+	decoderTypewriter.textContent = str;
+};
+
+const addHeader = (str) => {
+	const parent = document.getElementsByClassName('hero-wrapper')[0];
+	const header = document.createElement('h1');
+	header.classList.add('floating-header');
+	header.innerText = str;
+	parent.append(header);
 };
 
 const landingAnimation = () => {
@@ -146,38 +183,68 @@ const landingAnimation = () => {
 	let currentWord = selectedWords[wordIdx];
 	let encodedWord = '';
 	let decodingIndex = 0;
+	let tick = 0;
 	let stepSpeed = 100;
 
+	if (encodedWord === '') {
+		encodedWord = createStartingString(currentWord.length);
+		injectText(encodedWord);
+		console.log('test');
+	}
+
 	const decodingAnimation = () => {
-		console.log(decodingIndex, currentWord.length / 2);
-		if (decodingIndex >= (currentWord.length - 2) / 2) {
-			stepSpeed = 1000;
-		}
+		console.log(tick);
 		if (encodedWord === '') {
 			encodedWord = createStartingString(currentWord.length);
 			injectText(encodedWord);
-		} else if (encodedWord.length > currentWord.length) {
-			encodedWord = decodeStep(encodedWord, currentWord.length);
+			stepSpeed = 100;
+		}
+		if (tick !== 2) {
+			console.log('tick equals ' + tick);
+			encodedWord = createEncodedString(encodedWord, decodingIndex);
 			injectText(encodedWord);
-		} else if (
-			encodedWord.length === currentWord.length &&
-			encodedWord !== currentWord
-		) {
-			encodedWord = decodeWord(currentWord, decodingIndex);
-			injectText(encodedWord);
-			decodingIndex++;
-		} else if (encodedWord === currentWord) {
-			// do animation
-			decodingIndex = 0;
-			if (wordIdx === selectedWords.length - 1) {
-				return;
-			} else {
-				stepSpeed = 100;
-				wordIdx++;
-				currentWord = selectedWords[wordIdx];
-				encodedWord = createStartingString(currentWord.length);
-				injectText(encodedWord);
+		} else {
+			if (decodingIndex >= (currentWord.length - 2) / 2) {
+				stepSpeed = 400;
 			}
+			if (encodedWord.length > currentWord.length) {
+				encodedWord = decodeStep(encodedWord, currentWord.length);
+				injectText(encodedWord);
+			} else if (
+				encodedWord.length === currentWord.length &&
+				encodedWord !== currentWord
+			) {
+				encodedWord = decodeWord(currentWord, decodingIndex);
+				if (encodedWord === currentWord) {
+					if (wordIdx === selectedWords.length - 2) {
+						addHeader(currentWord);
+						encodedWord = '';
+						decodingIndex = 0;
+						wordIdx++;
+						currentWord = selectedWords[wordIdx];
+					}
+				}
+				injectText(encodedWord);
+				decodingIndex++;
+			} else if (encodedWord === currentWord) {
+				// do animation
+				decodingIndex = 0;
+
+				if (wordIdx === selectedWords.length - 1) {
+					return;
+				} else {
+					stepSpeed = 100;
+					wordIdx++;
+					currentWord = selectedWords[wordIdx];
+					encodedWord = createStartingString(currentWord.length);
+					injectText(encodedWord);
+				}
+			}
+		}
+		if (tick === 2) {
+			tick = 0;
+		} else {
+			tick++;
 		}
 		setTimeout(() => {
 			decodingAnimation();
