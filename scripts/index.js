@@ -45,6 +45,28 @@ const digits = [
 	'7',
 	'8',
 	'9',
+	'a',
+	'b',
+	'c',
+	'd',
+	'e',
+	'f',
+	'g',
+	'h',
+	'i',
+	'j',
+	'k',
+	'm',
+	'n',
+	'o',
+	'p',
+	'r',
+	't',
+	'u',
+	'w',
+	'x',
+	'y',
+	'z',
 	'A',
 	'B',
 	'C',
@@ -86,8 +108,8 @@ function randomizeDigit() {
 	const char = digits[randomNum];
 	return char;
 }
-const createStartingString = (num) => {
-	const desiredLength = num * 3;
+const createStartingString = (wordLength) => {
+	const desiredLength = wordLength * 3;
 	let startingStr = '';
 	for (let i = 0; i < desiredLength; i++) {
 		startingStr += randomizeDigit();
@@ -109,13 +131,10 @@ const createEncodedString = (str, num) => {
 		const newArr = [];
 		arr.forEach((item, index) => {
 			if (index < num) {
-				console.log('less ' + index + num);
 				newArr.push(item);
 			} else if (index > str.length - 1 - num) {
-				console.log('greater ' + index + num);
 				newArr.push(item);
 			} else {
-				console.log('middle ' + index + num);
 				newArr.push(randomizeDigit());
 			}
 		});
@@ -124,45 +143,33 @@ const createEncodedString = (str, num) => {
 	}
 };
 
-const decodeStep = (str, num) => {
-	const encodedWord = str;
-	const decodedWordLength = num;
+const decodeWord = (encryptedWord, OriginalWord, decodingIndex) => {
+	const encryptedStr = encryptedWord;
+	const originalStr = OriginalWord;
+	const currentIndex = decodingIndex;
 
-	if (encodedWord.length > decodedWordLength) {
-		const arr = encodedWord.split('');
+	if (encryptedStr.length > originalStr.length) {
+		// remove extra char from each side
+		const arr = encryptedStr.split('');
 		arr.shift();
 		arr.pop();
-		arr.forEach((item, idx) => {
-			arr[idx] = randomizeDigit();
+		arr.forEach((item, index) => {
+			arr[index] = randomizeDigit();
 		});
-		const result = arr.join('');
-		return result;
+		return arr.join('');
 	} else {
-		return;
-	}
-};
-
-const decodeWord = (word, index) => {
-	const decodedStr = word;
-	const currentIndex = index;
-	const isOdd = decodedStr.length % 2 === 0 ? true : false;
-
-	if (isOdd && currentIndex === decodedStr.length - 1) {
-		return decodedStr;
-	} else {
-		let newArr = [];
-		const arr = decodedStr.split('');
-		arr.forEach((item, idx) => {
-			if (idx <= currentIndex) {
-				newArr.push(item);
-			} else if (idx >= decodedStr.length - 1 - currentIndex) {
-				newArr.push(item);
+		// decode one char from each side
+		const arr = originalStr.split('');
+		arr.forEach((item, index) => {
+			if (index <= currentIndex) {
+				return;
+			} else if (index >= originalStr.length - 1 - currentIndex) {
+				return;
 			} else {
-				newArr.push(randomizeDigit());
+				arr[index] = randomizeDigit();
 			}
 		});
-		const result = newArr.join('');
-		return result;
+		return arr.join('');
 	}
 };
 
@@ -189,32 +196,37 @@ const landingAnimation = () => {
 	if (encodedWord === '') {
 		encodedWord = createStartingString(currentWord.length);
 		injectText(encodedWord);
-		console.log('test');
 	}
 
 	const decodingAnimation = () => {
-		console.log(tick);
 		if (encodedWord === '') {
 			encodedWord = createStartingString(currentWord.length);
 			injectText(encodedWord);
 			stepSpeed = 100;
 		}
-		if (tick !== 2) {
-			console.log('tick equals ' + tick);
+		if (tick !== 1) {
 			encodedWord = createEncodedString(encodedWord, decodingIndex);
 			injectText(encodedWord);
 		} else {
 			if (decodingIndex >= (currentWord.length - 2) / 2) {
-				stepSpeed = 400;
+				stepSpeed = 300;
 			}
 			if (encodedWord.length > currentWord.length) {
-				encodedWord = decodeStep(encodedWord, currentWord.length);
+				encodedWord = decodeWord(
+					encodedWord,
+					currentWord,
+					decodingIndex
+				);
 				injectText(encodedWord);
 			} else if (
 				encodedWord.length === currentWord.length &&
 				encodedWord !== currentWord
 			) {
-				encodedWord = decodeWord(currentWord, decodingIndex);
+				encodedWord = decodeWord(
+					encodedWord,
+					currentWord,
+					decodingIndex
+				);
 				if (encodedWord === currentWord) {
 					if (wordIdx === selectedWords.length - 2) {
 						addHeader(currentWord);
@@ -241,7 +253,7 @@ const landingAnimation = () => {
 				}
 			}
 		}
-		if (tick === 2) {
+		if (tick === 1) {
 			tick = 0;
 		} else {
 			tick++;
