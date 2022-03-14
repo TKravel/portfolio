@@ -105,11 +105,11 @@ const selectedWords = [
 
 function randomizeDigit() {
 	const randomNum = Math.floor(Math.random() * (digits.length - 1));
-	const char = digits[randomNum];
-	return char;
+	return digits[randomNum];
 }
+
 const createStartingString = (wordLength) => {
-	const desiredLength = wordLength * 3;
+	const desiredLength = wordLength % 2 === 0 ? 20 : 21;
 	let startingStr = '';
 	for (let i = 0; i < desiredLength; i++) {
 		startingStr += randomizeDigit();
@@ -117,36 +117,32 @@ const createStartingString = (wordLength) => {
 	return startingStr;
 };
 
-const createEncodedString = (str, num) => {
-	if (num === 0) {
-		const arr = str.split('');
-		const newArr = [];
-		arr.forEach(() => {
-			newArr.push(randomizeDigit());
-		});
-		const result = newArr.join('');
-		return result;
-	} else {
-		const arr = str.split('');
-		const newArr = [];
+const createEncodedString = (str, currentIndex) => {
+	const arr = str.split('');
+	if (currentIndex === 0) {
 		arr.forEach((item, index) => {
-			if (index < num) {
-				newArr.push(item);
-			} else if (index > str.length - 1 - num) {
-				newArr.push(item);
+			arr[index] = randomizeDigit();
+		});
+	} else {
+		arr.forEach((item, index) => {
+			if (index < currentIndex) {
+				arr[index] = item;
+			} else if (index > str.length - 1 - currentIndex) {
+				arr[index] = item;
 			} else {
-				newArr.push(randomizeDigit());
+				arr[index] = randomizeDigit();
 			}
 		});
-		const result = newArr.join('');
-		return result;
 	}
+	return arr.join('');
 };
 
 const decodeWord = (encryptedWord, OriginalWord, decodingIndex) => {
 	const encryptedStr = encryptedWord;
 	const originalStr = OriginalWord;
 	const currentIndex = decodingIndex;
+
+	console.log(encryptedStr, originalStr, currentIndex);
 
 	if (encryptedStr.length > originalStr.length) {
 		// remove extra char from each side
@@ -185,6 +181,17 @@ const addHeader = (str) => {
 	parent.append(header);
 };
 
+const togglePulseAnimation = () => {
+	if (decoderTypewriter.classList.contains('pulse')) {
+		decoderTypewriter.classList.remove('pulse');
+	} else {
+		decoderTypewriter.classList.add('pulse');
+		setTimeout(() => {
+			togglePulseAnimation();
+		}, 750);
+	}
+};
+
 const landingAnimation = () => {
 	let wordIdx = 0;
 	let currentWord = selectedWords[wordIdx];
@@ -193,55 +200,57 @@ const landingAnimation = () => {
 	let tick = 0;
 	let stepSpeed = 100;
 
+	// encode starting word
 	if (encodedWord === '') {
 		encodedWord = createStartingString(currentWord.length);
 		injectText(encodedWord);
 	}
 
 	const decodingAnimation = () => {
+		// encode if a new word
 		if (encodedWord === '') {
 			encodedWord = createStartingString(currentWord.length);
 			injectText(encodedWord);
 			stepSpeed = 100;
 		}
 		if (tick !== 1) {
+			// if tick does not equal 1, create a new encoded string
 			encodedWord = createEncodedString(encodedWord, decodingIndex);
 			injectText(encodedWord);
 		} else {
+			// continue decoding
 			if (decodingIndex >= (currentWord.length - 2) / 2) {
+				// slow down speed if word will be decoded this iteration
 				stepSpeed = 300;
 			}
-			if (encodedWord.length > currentWord.length) {
+			if (encodedWord !== currentWord) {
+				// decode a section of the word if encoded
 				encodedWord = decodeWord(
 					encodedWord,
 					currentWord,
 					decodingIndex
 				);
 				injectText(encodedWord);
-			} else if (
-				encodedWord.length === currentWord.length &&
-				encodedWord !== currentWord
-			) {
-				encodedWord = decodeWord(
-					encodedWord,
-					currentWord,
-					decodingIndex
-				);
+				if (encodedWord.length === currentWord.length) {
+					// start tracking char index if no extra chars remain
+					decodingIndex++;
+				}
 				if (encodedWord === currentWord) {
-					if (wordIdx === selectedWords.length - 2) {
+					// check if fully decoded
+					if (currentWord === 'Tim Kravel') {
+						// check if header word was decoded
 						addHeader(currentWord);
 						encodedWord = '';
 						decodingIndex = 0;
 						wordIdx++;
 						currentWord = selectedWords[wordIdx];
+					} else {
+						togglePulseAnimation();
 					}
 				}
-				injectText(encodedWord);
-				decodingIndex++;
 			} else if (encodedWord === currentWord) {
-				// do animation
+				// move to next word or return if none left
 				decodingIndex = 0;
-
 				if (wordIdx === selectedWords.length - 1) {
 					return;
 				} else {
@@ -253,6 +262,7 @@ const landingAnimation = () => {
 				}
 			}
 		}
+		// handle count for 2 interations for each decoding
 		if (tick === 1) {
 			tick = 0;
 		} else {
