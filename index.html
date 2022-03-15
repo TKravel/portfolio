@@ -97,17 +97,7 @@
 				/>
 			</div>
 			<div class="hero-wrapper">
-				<!-- <h1 id="heroHeader" class="section-info">Tim Kravel</h1> -->
 				<p id="decoderTypewriter"></p>
-				<!-- <p>Software Developer</p> -->
-				<!-- <a
-					id="scroll-down-arrow"
-					class="section-info"
-					href="#about"
-					role="button"
-					aria-label="Scroll down"
-					><i class="fas fa-long-arrow-alt-down fa-2x"></i
-				></a> -->
 			</div>
 		</section>
 		<section id="about">
@@ -202,6 +192,11 @@
 				<div class="project js-scroll fade-in-right">
 					<div class="project-info">
 						<h3 class="project-header">Movie search</h3>
+						<img
+							class="project-img"
+							src="img/Movie-search.jpg"
+							alt="Screenshot of Movie search app"
+						/>
 						<div class="link-container">
 							<a
 								target="_blank"
@@ -215,41 +210,19 @@
 								>Live demo</a
 							>
 						</div>
-						<img
-							class="project-img"
-							src="img/Movie-search.jpg"
-							alt="Screenshot of Movie search app"
-						/>
-						<p>
-							Search movie streaming availability on Netflix or
-							Prime Video
-						</p>
 					</div>
-					<div class="project-specs">
-						<h4>Technologies used:</h4>
-						<p>
-							<strong>Front-end:</strong> React hooks, Function
-							components
+					<div class="project-desc">
+						<p class="tech-list">
+							<i>React / Node.js / Express.js</i>
 						</p>
-						<ul class="tech-list">
-							<li>Search by range of years and genre</li>
-							<li>Display movie data or errors to the user</li>
-							<li>Fetch movie posters or handle broken links</li>
-						</ul>
-						<p><strong>Back-end:</strong> Node.js, Express.js</p>
-						<ul class="tech-list">
-							<li>
-								Proxy API calls to leverage environment variable
-								protection
-							</li>
-							<li>
-								Implements fetch API through the node-fetch
-								module
-							</li>
-							<li>
-								Handle API errors, passing status text to client
-							</li>
-						</ul>
+						<p>
+							Connects to a Restful API to retrieve streaming
+							availability for Netflix or Prime Video. Consumes
+							JSON data to display movie poster, data, and trailer
+							links to the user. API calls are proxied through an
+							express server to utilize environment variables to
+							protect sensitive data from the client.
+						</p>
 					</div>
 				</div>
 				<div class="project js-scroll fade-in-right">
@@ -257,6 +230,11 @@
 						<h3 class="project-header">
 							Quit smoking goal tracker
 						</h3>
+						<img
+							class="project-img"
+							src="img/quit-calc.jpg"
+							alt="Screenshot of Quit smoking App"
+						/>
 						<div class="link-container">
 							<a
 								target="_blank"
@@ -270,50 +248,32 @@
 								>Live demo</a
 							>
 						</div>
-						<img
-							class="project-img"
-							src="img/quit-calc.jpg"
-							alt="Screenshot of Quit smoking App"
-						/>
-						<p>
-							Motivate yourself to quit smoking by visualizing
-							savings and tracking goals
-						</p>
 					</div>
-					<div class="project-specs">
-						<h4>Technologies used:</h4>
-						<p>
-							<strong>Front-end:</strong> React, React Router,
-							React-hook-forms, Material UI components
+					<div class="project-desc">
+						<p class="tech-list">
+							<i
+								>React / React router / Material UI / Node.js /
+								NoSQL</i
+							>
 						</p>
-						<ul class="tech-list">
-							<li>Login, register, and save data</li>
-							<li>Watch goal progress increase daily</li>
-							<li>Create, track, and collect goals</li>
-						</ul>
 						<p>
-							<strong>Back-end:</strong> Node.js, Express.js,
-							MongoDB
+							Register to create, track, and collect completed
+							goals. Responsive design with form elements created
+							using Material UI inputs that are validated by
+							react-hook-forms NPM package. Connects to a MongoDB
+							cloud atlas cluster using Mongoose ODM to persist
+							user data.
 						</p>
-						<ul class="tech-list">
-							<li>
-								Control user authentication and authorization
-								through the use of cookies
-							</li>
-							<li>
-								Protect credentials with encryption using
-								Bcrypt.js
-							</li>
-							<li>
-								Interact with a MongoDB Cloud Atlas cluster
-								using MongooseODM
-							</li>
-						</ul>
 					</div>
 				</div>
 				<div class="project js-scroll fade-in-right">
 					<div class="project-info">
 						<h3 class="project-header">Parent Helper</h3>
+						<img
+							class="project-img"
+							src="img/parent-helper.jpg"
+							alt="Screenshot of Parent helper app"
+						/>
 						<div class="link-container">
 							<a
 								target="_blank"
@@ -327,53 +287,32 @@
 								>Live demo</a
 							>
 						</div>
-						<img
-							class="project-img"
-							src="img/parent-helper.jpg"
-							alt="Screenshot of Parent helper app"
-						/>
-						<p>
-							A digital journal to keep track of multiple aspects
-							of your toddler's day
-						</p>
 					</div>
-					<div class="project-specs">
-						<h4>Technologies used:</h4>
-						<p>
-							<strong>Front-end:</strong> React, custom hooks,
-							React Router, Function components
+					<div class="project-desc">
+						<p class="tech-list">
+							<i
+								>React / React router / Redux / Node.js /
+								Express.js / MongoDB</i
+							>
 						</p>
-						<ul class="tech-list">
-							<li>Login, register, and access your data</li>
-							<li>View, create, and edit daily or past data</li>
-							<li>
-								View past data in a paginated table with cells
-								that expand to a modal
-							</li>
-						</ul>
 						<p>
-							<strong>Back-end:</strong> Node.js, Express.js,
-							MongoDB
+							Track multiple aspects of your child's day by
+							creating, updating, reading, and deleting data from
+							a NoSQL database. User authentication and
+							authorization is handled using JSON Web Tokens and
+							reacts context API. User data is handled by Redux
+							and displayed in a paginated table.
 						</p>
-						<ul class="tech-list">
-							<li>
-								Control user authentication and authorization
-								through the use of JsonWebTokens
-							</li>
-							<li>
-								Protect sensitive data with industry standard
-								hashing algorithms
-							</li>
-							<li>
-								Utilize MongooseODM to interact with MongoDB
-							</li>
-						</ul>
 					</div>
 				</div>
-
 				<div class="project js-scroll fade-in-right">
 					<div class="project-info">
 						<h3 class="project-header">Weather app</h3>
+						<img
+							class="project-img"
+							src="img/weather.jpg"
+							alt="Screenshot of weather app"
+						/>
 						<div class="link-container">
 							<a
 								target="_blank"
@@ -387,44 +326,18 @@
 								>Live demo</a
 							>
 						</div>
-						<img
-							class="project-img"
-							src="img/weather.jpg"
-							alt="Screenshot of weather app"
-						/>
-						<p>
-							Stay ahead of the weather with data pulled from
-							weatherAPI.com
-						</p>
 					</div>
-					<div class="project-specs">
-						<h4>Technologies used:</h4>
-						<p><strong>Front-end:</strong> React, Fetch API</p>
-						<ul class="tech-list">
-							<li>
-								Consume third-party json data to display
-								forecast data to the user
-							</li>
-							<li>
-								Google Places API utilized for location
-								autocomplete
-							</li>
-							<li>Fully responsive design</li>
-						</ul>
-						<p><strong>Back-end:</strong> Node.js, Express.js</p>
-						<ul class="tech-list">
-							<li>
-								Proxy API calls to leverage environment variable
-								protection
-							</li>
-							<li>
-								Utilizes Fetch by using node-fetch NPM package
-							</li>
-							<li>
-								Handles API errors and informs client of error
-								status
-							</li>
-						</ul>
+					<div class="project-desc">
+						<p class="tech-list">
+							<i>React / Jest testing / Node.js / Express.js</i>
+						</p>
+						<p>
+							Retrieves weather data from a third-party Rest API
+							to display to the user. User input auto complete is
+							powered by Google Places API. Client application
+							uses react testing library and Jest for testing.
+							Responsive design and mobile friendly.
+						</p>
 					</div>
 				</div>
 			</div>

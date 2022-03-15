@@ -210,7 +210,7 @@ const landingAnimation = () => {
 	let encodedWord = '';
 	let decodingIndex = 0;
 	let tick = 0;
-	let stepSpeed = 100;
+	let stepSpeed = 150;
 
 	// encode starting word
 	if (encodedWord === '') {
@@ -223,7 +223,7 @@ const landingAnimation = () => {
 		if (encodedWord === '') {
 			encodedWord = createStartingString(currentWord.length);
 			injectText(encodedWord);
-			stepSpeed = 100;
+			stepSpeed = 150;
 		}
 		if (tick !== 1) {
 			// if tick does not equal 1, create a new encoded string
@@ -276,7 +276,7 @@ const landingAnimation = () => {
 				if (wordIdx === selectedWords.length - 1) {
 					return;
 				} else {
-					stepSpeed = 100;
+					stepSpeed = 150;
 					wordIdx++;
 					currentWord = selectedWords[wordIdx];
 					encodedWord = createStartingString(currentWord.length);
