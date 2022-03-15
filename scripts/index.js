@@ -95,9 +95,8 @@ const digits = [
 	'Z',
 ];
 const selectedWords = [
-	'Artist',
 	'Creative',
-	'Adaptable',
+	'Ambitious',
 	'Problem solver',
 	'Tim Kravel',
 	'Front-end Developer',
@@ -141,8 +140,6 @@ const decodeWord = (encryptedWord, OriginalWord, decodingIndex) => {
 	const encryptedStr = encryptedWord;
 	const originalStr = OriginalWord;
 	const currentIndex = decodingIndex;
-
-	console.log(encryptedStr, originalStr, currentIndex);
 
 	if (encryptedStr.length > originalStr.length) {
 		// remove extra char from each side
@@ -192,6 +189,21 @@ const togglePulseAnimation = () => {
 	}
 };
 
+const floatElements = () => {
+	const img = document.getElementById('profileImg');
+	const screenWidth = window.innerWidth;
+
+	img.classList.add('float-element');
+
+	if (screenWidth < 550) {
+		return;
+	} else {
+		for (let li of navLinks) {
+			li.classList.add('float-text');
+		}
+	}
+};
+
 const landingAnimation = () => {
 	let wordIdx = 0;
 	let currentWord = selectedWords[wordIdx];
@@ -237,13 +249,23 @@ const landingAnimation = () => {
 				}
 				if (encodedWord === currentWord) {
 					// check if fully decoded
-					if (currentWord === 'Tim Kravel') {
+					if (
+						currentWord === selectedWords[selectedWords.length - 2]
+					) {
 						// check if header word was decoded
-						addHeader(currentWord);
 						encodedWord = '';
+						injectText(encodedWord);
+						addHeader(currentWord);
+						floatElements();
 						decodingIndex = 0;
 						wordIdx++;
 						currentWord = selectedWords[wordIdx];
+					} else if (
+						currentWord === selectedWords[selectedWords.length - 1]
+					) {
+						decoderTypewriter.classList.add(
+							'final-animation-position'
+						);
 					} else {
 						togglePulseAnimation();
 					}
