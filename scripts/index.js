@@ -35,6 +35,16 @@ function openNav() {
 const fillerDigits = document.getElementsByClassName('fillerDigits');
 const decoderTypewriter = document.getElementById('decoderTypewriter');
 const digits = [
+	'~',
+	'@',
+	'#',
+	'$',
+	'%',
+	'&',
+	'*',
+	'+',
+	'?',
+	':',
 	'0',
 	'1',
 	'2',
@@ -108,7 +118,7 @@ function randomizeDigit() {
 }
 
 const createStartingString = (wordLength) => {
-	const desiredLength = wordLength % 2 === 0 ? 20 : 21;
+	const desiredLength = wordLength % 2 === 0 ? 22 : 23;
 	let startingStr = '';
 	for (let i = 0; i < desiredLength; i++) {
 		startingStr += randomizeDigit();
@@ -210,7 +220,7 @@ const landingAnimation = () => {
 	let encodedWord = '';
 	let decodingIndex = 0;
 	let tick = 0;
-	let stepSpeed = 150;
+	let stepSpeed = 125;
 
 	// encode starting word
 	if (encodedWord === '') {
@@ -223,7 +233,7 @@ const landingAnimation = () => {
 		if (encodedWord === '') {
 			encodedWord = createStartingString(currentWord.length);
 			injectText(encodedWord);
-			stepSpeed = 150;
+			stepSpeed = 125;
 		}
 		if (tick !== 1) {
 			// if tick does not equal 1, create a new encoded string
@@ -276,7 +286,7 @@ const landingAnimation = () => {
 				if (wordIdx === selectedWords.length - 1) {
 					return;
 				} else {
-					stepSpeed = 150;
+					stepSpeed = 125;
 					wordIdx++;
 					currentWord = selectedWords[wordIdx];
 					encodedWord = createStartingString(currentWord.length);
