@@ -144,14 +144,14 @@ nav ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	height: 2em;
+	height: 2.2em;
 }
 
 nav li {
 	display: inline;
 	justify-content: center;
 	align-self: center;
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 
 nav a {
@@ -211,12 +211,13 @@ nav a {
 @media screen and (max-width: 550px) {
 	nav {
 		top: 0;
-		right: 0;
+		right: -80vw;
 		height: 100vh;
-		width: 80%;
+		width: 80vw;
 		color: var(--main-dark);
 		background-color: var(--main-blue);
 		border-left: 1px solid #000;
+		transition: right 500ms;
 	}
 
 	nav ul {
@@ -241,6 +242,8 @@ nav a {
 		position: fixed;
 		top: 0.4em;
 		right: 0.4em;
+		opacity: 1;
+		transition: opacity 800ms 600ms;
 		z-index: 6;
 	}
 
@@ -252,12 +255,32 @@ nav a {
 		margin-top: 0.2em;
 	}
 
-	.show-nav {
+	/* .show-nav {
 		display: block;
 	}
 
 	.hide-nav {
 		display: none;
+	} */
+
+	.nav-slide-in {
+		right: 0;
+	}
+
+	.nav-slide-out {
+		right: -80vw;
+	}
+
+	@keyframes nav-in {
+		to{
+			right: 0;
+		}
+	}
+	@keyframes nav-out {
+		to {
+			right: -200px;
+		}
+		
 	}
 }
 
@@ -396,6 +419,11 @@ nav a {
 	animation-fill-mode: forwards;
 }
 
+.float-nav {
+	animation: float-nav 3s;
+	animation-fill-mode: forwards;
+}
+
 @keyframes float-txt {
 	to {
 		text-shadow: 0px 6px 5px rgba(0, 0, 0, 0.4);
@@ -406,6 +434,13 @@ nav a {
 	to {
 		-webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
 		box-shadow: 0px 5px 15px -2px rgba(0, 0, 0, 0.8);
+	}
+}
+
+@keyframes float-nav {
+	to {
+		-webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+		box-shadow: 0px 5px 15px -2px rgba(0, 0, 0, 0.3);
 	}
 }
 
@@ -500,10 +535,17 @@ nav a {
 	text-align: center;
 }
 
+.icon-container p:hover {
+	color:rgba(0, 0, 0, 0.8);
+	cursor: default;
+}
+
 .skill-icon {
 	width: 4em;
 	height: 4em;
 }
+
+
 
 @media screen and (max-width: 950px) {
 	#bio-container {
@@ -783,6 +825,7 @@ textarea {
 .submit-btn {
 	background-color: var(--main-dark);
 	color: var(--main-blue);
+	cursor: pointer;
 	border-radius: 1rem;
 	font-size: 1rem;
 	margin: 1rem auto;

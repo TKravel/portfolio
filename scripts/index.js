@@ -7,18 +7,23 @@ const navLinks = document.getElementsByClassName('nav-link');
 
 function closeNav() {
 	console.log('click');
-	nav.classList.remove('show-nav');
-	nav.classList.add('hide-nav');
+	nav.classList.add('nav-slide-out');
+	nav.classList.remove('nav-slide-in');
+	nav.setAttribute('aria-hidden', 'true');
 	openNavBtn.classList.add('show-nav');
 	openNavBtn.classList.remove('hide-nav');
+	openNavBtn.style.opacity = 1;
 }
 
 function openNav() {
-	nav.classList.add('show-nav');
-	nav.classList.add('fade-in-right');
-	nav.classList.remove('hide-nav');
+	nav.classList.remove('nav-slide-out');
+	nav.classList.add('nav-slide-in');
+	nav.setAttribute('aria-hidden', 'false');
+	// nav.classList.add('fade-in-right');
+
 	openNavBtn.classList.add('hide-nav');
 	openNavBtn.classList.remove('show-nav');
+	openNavBtn.style.opacity = 0;
 
 	for (let i = 0; i < navLinks.length; i++) {
 		navLinks[i].addEventListener('click', () => {
@@ -199,6 +204,7 @@ const togglePulseAnimation = () => {
 	}
 };
 
+// add text shadow tansition
 const floatElements = () => {
 	const img = document.getElementById('profileImg');
 	const screenWidth = window.innerWidth;
@@ -208,6 +214,7 @@ const floatElements = () => {
 	if (screenWidth < 550) {
 		return;
 	} else {
+		nav.classList.add('float-nav');
 		for (let li of navLinks) {
 			li.classList.add('float-text');
 		}
