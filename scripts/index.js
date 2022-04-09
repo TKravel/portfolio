@@ -6,7 +6,6 @@ const nav = document.getElementsByTagName('nav')[0];
 const navLinks = document.getElementsByClassName('nav-link');
 
 function closeNav() {
-	console.log('click');
 	nav.classList.add('nav-slide-out');
 	nav.classList.remove('nav-slide-in');
 	nav.setAttribute('aria-hidden', 'true');
@@ -26,12 +25,15 @@ function openNav() {
 	openNavBtn.style.opacity = 0;
 
 	for (let i = 0; i < navLinks.length; i++) {
-		navLinks[i].addEventListener('click', () => {
-			nav.classList.remove('show-nav');
-			nav.classList.add('hide-nav');
-			openNavBtn.classList.add('show-nav');
-			openNavBtn.classList.remove('hide-nav');
-		});
+		navLinks[i].addEventListener(
+			'click',
+			closeNav
+
+			// nav.classList.remove('show-nav');
+			// nav.classList.add('hide-nav');
+			// openNavBtn.classList.add('show-nav');
+			// openNavBtn.classList.remove('hide-nav');
+		);
 	}
 }
 
