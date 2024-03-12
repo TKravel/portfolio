@@ -391,9 +391,9 @@ function handleForm(e) {
 
   console.log(data);
 
-  //https://www.tkdevdesigns.com/api/portfolioServer
+  //https://www.tkdevdesign.com/api/portfolioServer
 
-  fetch("https://tkdevdesigns.com/api/portfolioServer/contact", {
+  fetch("https://www.tkdevdesign.com/api/portfolioServer/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
