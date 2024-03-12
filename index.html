@@ -1,504 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Tim Kravel</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tim Kravel</title>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&family=Roboto:wght@400&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="./styles/styles.css" />
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="./apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="./favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="./favicon-16x16.png"
-		/>
-		<link rel="manifest" href="./site.webmanifest" />
-		<script
-			src="https://kit.fontawesome.com/1491b2caf1.js"
-			crossorigin="anonymous"
-		></script>
-	</head>
-	<body>
-		<i
-			id="open-nav-btn"
-			class="fas fa-bars fa-2x show-nav"
-			onclick="openNav()"
-		></i>
-		<nav class="hide-nav">
-			<i
-				id="close-nav-btn"
-				class="fas fa-times fa-2x"
-				onclick="closeNav()"
-			></i>
-			<ul>
-				<li class="nav-link"><a href="#landingHero">Home</a></li>
-				<li class="nav-link"><a href="#about">About</a></li>
-				<li class="nav-link"><a href="#projects">Projects</a></li>
-				<li class="nav-link"><a href="#contact">Contact</a></li>
-				<li class="nav-contact">
-					<div class="nav-dl-container">
-						<button
-							id="nav-download-btn"
-							onClick="startDownload(event)"
-							class="nav-dl-btn"
-						>
-							<i
-								id="nav-download-icon"
-								class="fas fa-file-pdf"
-							></i
-							>Resume
-						</button>
-						<div
-							id="nav-download-spinner"
-							class="download-spinner hide-content"
-						>
-							<i class="fas fa-spinner fa-spin fa-1x"></i>
-						</div>
-					</div>
-				</li>
-			</ul>
-			<div class="nav-contact">
-				<div class="nav-social-container">
-					<a href="https://github.com/TKravel" target="_blank"
-						><i class="fab fa-github-square nav-icon"></i
-					></a>
-					<a
-						href="https://www.linkedin.com/in/tim-kravel/"
-						target="_blank"
-						><i class="fab fa-linkedin nav-icon"></i
-					></a>
-				</div>
-			</div>
-		</nav>
-		<section id="landingHero">
-			<div id="imgContainer" class="sectionHeader">
-				<img
-					id="profileImg"
-					src="img/profile-jpg.jpg"
-					alt="Picture of Tim Kravel"
-				/>
-			</div>
-			<div class="hero-wrapper">
-				<p id="decoderTypewriter"></p>
-			</div>
-		</section>
-		<section id="about">
-			<div id="bio-container" class="js-scroll fade-in-bottom">
-				<h2 class="sectionHeader">Hi, I'm Tim Kravel!</h2>
-				<p>
-					&emsp;I'm a developer with a passion for problem solving and
-					creating cool things. After a decade of creating programs
-					for industrial controllers to machine aerospace parts from
-					raw metals, I am exciting to continue my journey in a role
-					working with the MERN or a similar stack. My love of
-					learning continually pushes me to build upon my knowledge
-					while also exploring other programming languages in my free
-					time.
-				</p>
-				<p>
-					&emsp;When I'm not coding you can find me and the coolest
-					little guy in the world exploring parks, enjoying nature, or
-					fishing!
-				</p>
-				<div
-					onClick="startDownload(event)"
-					role="button"
-					id="download-btn"
-				>
-					<i class="fas fa-file-pdf" id="download-icon"></i
-					><span>Download my resume</span>
-				</div>
-				<div
-					id="download-spinner"
-					class="download-spinner hide-content"
-				>
-					<i class="fas fa-spinner fa-spin fa-2x"></i>
-				</div>
-			</div>
-			<div id="skill-container" class="js-scroll fade-in-right">
-				<h2>Skills</h2>
-				<hr style="width: 90%" />
-				<div class="icon-container">
-					<img class="skill-icon" src="./img/html-5.svg" alt="HTML" />
-					<hr style="width: 95%" />
-					<p>HTML</p>
-				</div>
-				<div class="icon-container">
-					<img class="skill-icon" src="./img/css-3.svg" alt="CSS" />
-					<hr style="width: 95%" />
-					<p>CSS</p>
-				</div>
-				<div class="icon-container">
-					<img
-						class="skill-icon"
-						src="./img/javascript.svg"
-						alt="JavaScript"
-					/>
-					<hr style="width: 95%" />
-					<p>JavaScript</p>
-				</div>
-				<div class="icon-container">
-					<img class="skill-icon" src="./img/react.svg" alt="React" />
-					<hr style="width: 95%" />
-					<p>React</p>
-				</div>
-				<div class="icon-container">
-					<img class="skill-icon" src="./img/nodejs.svg" alt="Node" />
-					<hr style="width: 95%" />
-					<p>Node.js</p>
-				</div>
-				<div class="icon-container">
-					<img
-						class="skill-icon"
-						src="./img/mongodbOrig.svg"
-						alt="MongoDB"
-					/>
-					<hr style="width: 95%" />
-					<p>MongoDB</p>
-				</div>
-				<div class="icon-container">
-					<img
-						class="skill-icon"
-						src="./img/git-icon.svg"
-						alt="Git"
-					/>
-					<hr style="width: 95%" />
-					<p>Git</p>
-				</div>
-			</div>
-		</section>
-		<section id="projects">
-			<div class="js-scroll fade-in-bottom">
-				<h2 class="sectionHeader">Check out my work!</h2>
-
-				<div class="project js-scroll fade-in-right">
-					<div class="project-info">
-						<h3 class="project-header">FEARFLIX</h3>
-						<img
-							class="project-img"
-							src="img/fearflix.jpg"
-							alt="Screenshot of fearflix app"
-						/>
-						<div class="link-container">
-							<a
-								target="_blank"
-								href="https://github.com/TKravel/fearflix-client"
-								>View code</a
-							>
-							<span style="margin: 1em"><strong>|</strong></span>
-							<a
-								target="_blank"
-								href="https://bucolic-alpaca-ba289b.netlify.app/"
-								>Live demo</a
-							>
-						</div>
-					</div>
-					<div class="project-desc">
-						<p class="tech-list">
-							<i>React / Redux / SASS / Vanilla JavaScript</i>
-						</p>
-						<p>
-							A Netflix UI clone using only currently available
-							horror movies on Netflix pulled from a third party
-							API. I personally challenged myself to build out as
-							much of the UI as I could using only React, SASS,
-							and Vanilla JavaScript without any other packages.
-						</p>
-					</div>
-				</div>
-				<div class="project js-scroll fade-in-right">
-					<div class="project-info">
-						<h3 class="project-header">Free2Play games</h3>
-						<img
-							class="project-img"
-							src="img/f2p-games.JPG"
-							alt="Screenshot of free to play app"
-						/>
-						<div class="link-container">
-							<a
-								target="_blank"
-								href="https://github.com/TKravel/f2p-games"
-								>View code</a
-							>
-							<span style="margin: 1em"><strong>|</strong></span>
-							<a
-								target="_blank"
-								href="https://eclectic-hummingbird-ff6216.netlify.app/"
-								>Live demo</a
-							>
-						</div>
-					</div>
-					<div class="project-desc">
-						<p class="tech-list">
-							<i>React / Redux / SCSS</i>
-						</p>
-						<p>
-							Explore free to play PC and Web browser games from
-							data pulled from a third party API. Stores data
-							using React-Redux so components only have to track
-							their own states. Styled using SCSS while using a
-							responsive and mobile first approach.
-						</p>
-					</div>
-				</div>
-				<div class="project js-scroll fade-in-right">
-					<div class="project-info">
-						<h3 class="project-header">
-							Quit smoking goal tracker
-						</h3>
-						<img
-							class="project-img"
-							src="img/quit-calc.jpg"
-							alt="Screenshot of Quit smoking App"
-						/>
-						<div class="link-container">
-							<a
-								target="_blank"
-								href="https://github.com/TKravel/quit-calc-client"
-								>View code</a
-							>
-							<span style="margin: 1em"><strong>|</strong></span>
-							<a
-								target="_blank"
-								href="https://condescending-boyd-227f42.netlify.app/"
-								>Live demo</a
-							>
-						</div>
-					</div>
-					<div class="project-desc">
-						<p class="tech-list">
-							<i
-								>React / React router / Material UI / Node.js /
-								NoSQL</i
-							>
-						</p>
-						<p>
-							Register to create, track, and collect completed
-							goals. Responsive design with form elements created
-							using Material UI inputs that are validated by
-							react-hook-forms NPM package. Connects to a MongoDB
-							cloud atlas cluster using Mongoose ODM to persist
-							user data.
-						</p>
-					</div>
-				</div>
-				<div class="project js-scroll fade-in-right">
-					<div class="project-info">
-						<h3 class="project-header">Movie search</h3>
-						<img
-							class="project-img"
-							src="img/Movie-search.jpg"
-							alt="Screenshot of Movie search app"
-						/>
-						<div class="link-container">
-							<a
-								target="_blank"
-								href="https://github.com/TKravel/movie-search-client"
-								>View code</a
-							>
-							<span style="margin: 1em"><strong>|</strong></span>
-							<a
-								target="_blank"
-								href="https://jovial-goldwasser-b2768b.netlify.app/"
-								>Live demo</a
-							>
-						</div>
-					</div>
-					<div class="project-desc">
-						<p class="tech-list">
-							<i>React / Node.js / Express.js</i>
-						</p>
-						<p>
-							Connects to a Restful API to retrieve streaming
-							availability for Netflix or Prime Video. Consumes
-							JSON data to display movie poster, data, and trailer
-							links to the user. API calls are proxied through an
-							express server to utilize environment variables to
-							protect sensitive data from the client.
-						</p>
-					</div>
-				</div>
-				<div class="project js-scroll fade-in-right">
-					<div class="project-info">
-						<h3 class="project-header">Parent Helper</h3>
-						<img
-							class="project-img"
-							src="img/parent-helper.jpg"
-							alt="Screenshot of Parent helper app"
-						/>
-						<div class="link-container">
-							<a
-								target="_blank"
-								href="https://github.com/TKravel/parent-helper"
-								>View code</a
-							>
-							<span style="margin: 1em"><strong>|</strong></span>
-							<a
-								target="_blank"
-								href="http://tranquil-atoll-54937.herokuapp.com/"
-								>Live demo</a
-							>
-						</div>
-					</div>
-					<div class="project-desc">
-						<p class="tech-list">
-							<i
-								>React / React router / Redux / Node.js /
-								Express.js / MongoDB</i
-							>
-						</p>
-						<p>
-							Track multiple aspects of your child's day by
-							creating, updating, reading, and deleting data from
-							a NoSQL database. User authentication and
-							authorization is handled using JSON Web Tokens and
-							reacts context API. User data is handled by Redux
-							and displayed in a paginated table.
-						</p>
-					</div>
-				</div>
-				<div class="project js-scroll fade-in-right">
-					<div class="project-info">
-						<h3 class="project-header">Weather app</h3>
-						<img
-							class="project-img"
-							src="img/weather.jpg"
-							alt="Screenshot of weather app"
-						/>
-						<div class="link-container">
-							<a
-								target="_blank"
-								href="https://github.com/TKravel/weather-app-client"
-								>View code</a
-							>
-							<span style="margin: 1em"><strong>|</strong></span>
-							<a
-								target="_blank"
-								href="https://eloquent-bardeen-6340b4.netlify.app"
-								>Live demo</a
-							>
-						</div>
-					</div>
-					<div class="project-desc">
-						<p class="tech-list">
-							<i>React / Jest testing / Node.js / Express.js</i>
-						</p>
-						<p>
-							Retrieves weather data from a third-party Rest API
-							to display to the user. User input auto complete is
-							powered by Google Places API. Client application
-							uses react testing library and Jest for testing.
-							Responsive design and mobile friendly.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="contact">
-			<div class="js-scroll fade-in-bottom">
-				<h2 class="sectionHeader">Contact me!</h2>
-				<div class="contact-container">
-					<div id="contact-wrapper">
-						<p>
-							Interested in learning about a project or have
-							feedback?<br />Lets chat!
-						</p>
-						<form
-							id="contact-form"
-							class="contact-form"
-							onsubmit="handleForm(e)"
-						>
-							<label for="fullName">Full name</label>
-							<input
-								type="text"
-								id="fullName"
-								name="fullName"
-								placeholder="Your name"
-								required
-							/>
-							<br />
-							<label for="email">Email</label>
-							<input
-								type="email"
-								id="email"
-								name="email"
-								placeholder="Your email"
-								required
-							/>
-							<br />
-							<label for="message">Message</label>
-							<textarea
-								id="message"
-								name="message"
-								placeholder="Enter your message..."
-								required
-							></textarea>
-							<br />
-							<button id="submit-btn" class="submit-btn">
-								Submit
-							</button>
-							<div id="spinner" class="hide-content">
-								<i class="fas fa-spinner fa-spin fa-2x"></i>
-							</div>
-						</form>
-					</div>
-					<div
-						id="contact-response"
-						class="submitted-wrapper hide-content"
-					>
-						<i
-							id="close-form-response"
-							class="fas fa-times"
-							onclick="restoreForm()"
-						></i>
-						<i id="sent-icon" class="far fa-paper-plane"></i>
-						<p>Thanks, your message is on its way!</p>
-					</div>
-					<div id="contact-error" class="error-wrapper hide-content">
-						<i
-							id="error-icon"
-							class="fas fa-exclamation-triangle"
-						></i>
-						<p>Opps! Something went wrong!</p>
-						<p>Contact me directly at:</p>
-						<p id="error-email"></p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<footer>
-			<div class="footer-contact">
-				<div class="footer-social-container">
-					<a href="https://github.com/TKravel" target="_blank"
-						><i class="fab fa-github-square nav-icon"></i
-					></a>
-					<a
-						href="https://www.linkedin.com/in/tim-kravel/"
-						target="_blank"
-						><i class="fab fa-linkedin nav-icon"></i
-					></a>
-				</div>
-			</div>
-			<p>&copy <span id="current-year"></span> TKDevDesign.com</p>
-		</footer>
-		<script src="scripts/index.js"></script>
-	</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&family=Roboto:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <script src="https://kit.fontawesome.com/1491b2caf1.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <i id="open-nav-btn" class="fas fa-bars fa-2x show-nav" onclick="openNav()"></i>
+    <nav class="hide-nav">
+      <i id="close-nav-btn" class="fas fa-times fa-2x" onclick="closeNav()"></i>
+      <ul>
+        <li class="nav-link"><a href="#landingHero">Home</a></li>
+        <li class="nav-link"><a href="#about">About</a></li>
+        <li class="nav-link"><a href="#projects">Projects</a></li>
+        <li class="nav-link"><a href="#contact">Contact</a></li>
+        <li class="nav-contact">
+          <div class="nav-dl-container">
+            <button id="nav-download-btn" onClick="startDownload(event)" class="nav-dl-btn"><i id="nav-download-icon" class="fas fa-file-pdf"></i>Resume</button>
+            <div id="nav-download-spinner" class="download-spinner hide-content">
+              <i class="fas fa-spinner fa-spin fa-1x"></i>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-contact">
+        <div class="nav-social-container">
+          <a href="https://github.com/TKravel" target="_blank"><i class="fab fa-github-square nav-icon"></i></a>
+          <a href="https://www.linkedin.com/in/tim-kravel/" target="_blank"><i class="fab fa-linkedin nav-icon"></i></a>
+        </div>
+      </div>
+    </nav>
+    <section id="landingHero">
+      <div id="imgContainer" class="sectionHeader">
+        <img id="profileImg" src="img/profile-jpg.jpg" alt="Picture of Tim Kravel" />
+      </div>
+      <div class="hero-wrapper">
+        <p id="decoderTypewriter"></p>
+      </div>
+    </section>
+    <section id="about">
+      <div id="bio-container" class="js-scroll fade-in-bottom">
+        <h2 class="sectionHeader">Hi, I'm Tim Kravel!</h2>
+        <p>
+          &emsp;I'm a developer with a passion for problem solving and creating cool things. After a decade of creating programs for industrial controllers to machine aerospace parts from raw metals, I am exciting to continue my journey in a role working with the MERN or a
+          similar stack. My love of learning continually pushes me to build upon my knowledge while also exploring other programming languages in my free time.
+        </p>
+        <p>&emsp;When I'm not coding you can find me and the coolest little guy in the world exploring parks, enjoying nature, or fishing!</p>
+        <div onClick="startDownload(event)" role="button" id="download-btn"><i class="fas fa-file-pdf" id="download-icon"></i><span>Download my resume</span></div>
+        <div id="download-spinner" class="download-spinner hide-content">
+          <i class="fas fa-spinner fa-spin fa-2x"></i>
+        </div>
+      </div>
+      <div id="skill-container" class="js-scroll fade-in-right">
+        <h2>Skills</h2>
+        <hr style="width: 90%" />
+        <div class="icon-container">
+          <img class="skill-icon" src="./img/html-5.svg" alt="HTML" />
+          <hr style="width: 95%" />
+          <p>HTML</p>
+        </div>
+        <div class="icon-container">
+          <img class="skill-icon" src="./img/css-3.svg" alt="CSS" />
+          <hr style="width: 95%" />
+          <p>CSS</p>
+        </div>
+        <div class="icon-container">
+          <img class="skill-icon" src="./img/javascript.svg" alt="JavaScript" />
+          <hr style="width: 95%" />
+          <p>JavaScript</p>
+        </div>
+        <div class="icon-container">
+          <img class="skill-icon" src="./img/react.svg" alt="React" />
+          <hr style="width: 95%" />
+          <p>React</p>
+        </div>
+        <div class="icon-container">
+          <img class="skill-icon" src="./img/nodejs.svg" alt="Node" />
+          <hr style="width: 95%" />
+          <p>Node.js</p>
+        </div>
+        <div class="icon-container">
+          <img class="skill-icon" src="./img/mongodbOrig.svg" alt="MongoDB" />
+          <hr style="width: 95%" />
+          <p>MongoDB</p>
+        </div>
+        <div class="icon-container">
+          <img class="skill-icon" src="./img/git-icon.svg" alt="Git" />
+          <hr style="width: 95%" />
+          <p>Git</p>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="js-scroll fade-in-bottom">
+        <h2 class="sectionHeader">Check out my work!</h2>
+        <!-- Mix-it -->
+        <div class="project js-scroll fade-in-right">
+          <div class="project-info">
+            <h3 class="project-header">MiX-iT!</h3>
+            <img class="project-img" src="img/mix-it.jpg" alt="Screenshot of Mix-it app" />
+            <div class="link-container">
+              <a target="_blank" href="https://github.com/TKravel/mix-it">View code</a>
+              <span style="margin: 1em"><strong>|</strong></span>
+              <a target="_blank" href="https://tkdevdesign.com/mix-it/">Live demo</a>
+            </div>
+          </div>
+          <div class="project-desc">
+            <p class="tech-list">
+              <i>PHP / Slim 4 / Bootstrap 5</i>
+            </p>
+            <p>Search mix drinks to find ingredients, instructions, and similar drink suggestions. Built with PHP's Slim 4 framework in a MVC style. MiX-iT might just help you find your next favorite drink!</p>
+          </div>
+        </div>
+        <!-- fearflix -->
+        <div class="project js-scroll fade-in-right">
+          <div class="project-info">
+            <h3 class="project-header">FEARFLIX</h3>
+            <img class="project-img" src="img/fearflix.jpg" alt="Screenshot of fearflix app" />
+            <div class="link-container">
+              <a target="_blank" href="https://github.com/TKravel/fearflix-client">View code</a>
+              <span style="margin: 1em"><strong>|</strong></span>
+              <a target="_blank" href="https://tkdevdesign.com/fearflix/">Live demo</a>
+            </div>
+          </div>
+          <div class="project-desc">
+            <p class="tech-list">
+              <i>React / Redux / SASS / Vanilla JavaScript</i>
+            </p>
+            <p>A Netflix UI clone using only currently available horror movies on Netflix pulled from a third party API. I personally challenged myself to build out as much of the UI as I could using only React, SASS, and Vanilla JavaScript without any other packages.</p>
+          </div>
+        </div>
+        <!-- free2play games -->
+        <div class="project js-scroll fade-in-right">
+          <div class="project-info">
+            <h3 class="project-header">Free2Play games</h3>
+            <img class="project-img" src="img/f2p-games.JPG" alt="Screenshot of free to play app" />
+            <div class="link-container">
+              <a target="_blank" href="https://github.com/TKravel/f2p-games">View code</a>
+              <span style="margin: 1em"><strong>|</strong></span>
+              <a target="_blank" href="https://tkdevdesign.com/f2p/">Live demo</a>
+            </div>
+          </div>
+          <div class="project-desc">
+            <p class="tech-list">
+              <i>React / Redux / SCSS</i>
+            </p>
+            <p>Explore free to play PC and Web browser games from data pulled from a third party API. Stores data using React-Redux so components only have to track their own states. Styled using SCSS while using a responsive and mobile first approach.</p>
+          </div>
+        </div>
+        <!-- quit smoking app -->
+        <div class="project js-scroll fade-in-right">
+          <div class="project-info">
+            <h3 class="project-header">Quit smoking goal tracker</h3>
+            <img class="project-img" src="img/quit-calc.jpg" alt="Screenshot of Quit smoking App" />
+            <div class="link-container">
+              <a target="_blank" href="https://github.com/TKravel/quit-calc-client">View code</a>
+              <span style="margin: 1em"><strong>|</strong></span>
+              <a target="_blank" href="https://tkdevdesign.com/quitcalc/">Live demo</a>
+            </div>
+          </div>
+          <div class="project-desc">
+            <p class="tech-list">
+              <i>React / React router / Material UI / Node.js / NoSQL</i>
+            </p>
+            <p>Register to create, track, and collect completed goals. Responsive design with form elements created using Material UI inputs that are validated by react-hook-forms NPM package. Connects to a MongoDB cloud atlas cluster using Mongoose ODM to persist user data.</p>
+          </div>
+        </div>
+        <!-- movie search -->
+        <div class="project js-scroll fade-in-right">
+          <div class="project-info">
+            <h3 class="project-header">Movie search</h3>
+            <img class="project-img" src="img/Movie-search.jpg" alt="Screenshot of Movie search app" />
+            <div class="link-container">
+              <a target="_blank" href="https://github.com/TKravel/movie-search-client">View code</a>
+              <span style="margin: 1em"><strong>|</strong></span>
+              <a target="_blank" href="https://tkdevdesign.com/moviesearch/">Live demo</a>
+            </div>
+          </div>
+          <div class="project-desc">
+            <p class="tech-list">
+              <i>React / Node.js / Express.js</i>
+            </p>
+            <p>
+              Connects to a Restful API to retrieve streaming availability for Netflix or Prime Video. Consumes JSON data to display movie poster, data, and trailer links to the user. API calls are proxied through an express server to utilize environment variables to protect
+              sensitive data from the client.
+            </p>
+          </div>
+        </div>
+        <!-- parent helper -->
+        <div class="project js-scroll fade-in-right">
+          <div class="project-info">
+            <h3 class="project-header">Parent Helper</h3>
+            <img class="project-img" src="img/parent-helper.jpg" alt="Screenshot of Parent helper app" />
+            <div class="link-container">
+              <a target="_blank" href="https://github.com/TKravel/parent-helper">View code</a>
+              <span style="margin: 1em"><strong>|</strong></span>
+              <a target="_blank" href="https://tkdevdesign.com/parenthelper/">Live demo</a>
+            </div>
+          </div>
+          <div class="project-desc">
+            <p class="tech-list">
+              <i>React / React router / Redux / Node.js / Express.js / MongoDB</i>
+            </p>
+            <p>
+              Track multiple aspects of your child's day by creating, updating, reading, and deleting data from a NoSQL database. User authentication and authorization is handled using JSON Web Tokens and reacts context API. User data is handled by Redux and displayed in a
+              paginated table.
+            </p>
+          </div>
+        </div>
+        <!-- weather app -->
+        <div class="project js-scroll fade-in-right">
+          <div class="project-info">
+            <h3 class="project-header">Weather app</h3>
+            <img class="project-img" src="img/weather.jpg" alt="Screenshot of weather app" />
+            <div class="link-container">
+              <a target="_blank" href="https://github.com/TKravel/weather-app-client">View code</a>
+              <span style="margin: 1em"><strong>|</strong></span>
+              <a target="_blank" href="https://tkdevdesign.com/weather/">Live demo</a>
+            </div>
+          </div>
+          <div class="project-desc">
+            <p class="tech-list">
+              <i>React / Jest testing / Node.js / Express.js</i>
+            </p>
+            <p>Retrieves weather data from a third-party Rest API to display to the user. User input auto complete is powered by Google Places API. Client application uses react testing library and Jest for testing. Responsive design and mobile friendly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="js-scroll fade-in-bottom">
+        <h2 class="sectionHeader">Contact me!</h2>
+        <div class="contact-container">
+          <div id="contact-wrapper">
+            <p>Interested in learning about a project or have feedback?<br />Lets chat!</p>
+            <form id="contact-form" class="contact-form" onsubmit="handleForm(e)">
+              <label for="fullName">Full name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Your name" required />
+              <br />
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Your email" required />
+              <br />
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Enter your message..." required></textarea>
+              <br />
+              <button id="submit-btn" class="submit-btn">Submit</button>
+              <div id="spinner" class="hide-content">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+              </div>
+            </form>
+          </div>
+          <div id="contact-response" class="submitted-wrapper hide-content">
+            <i id="close-form-response" class="fas fa-times" onclick="restoreForm()"></i>
+            <i id="sent-icon" class="far fa-paper-plane"></i>
+            <p>Thanks, your message is on its way!</p>
+          </div>
+          <div id="contact-error" class="error-wrapper hide-content">
+            <i id="error-icon" class="fas fa-exclamation-triangle"></i>
+            <p>Opps! Something went wrong!</p>
+            <p>Contact me directly at:</p>
+            <p id="error-email"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-contact">
+        <div class="footer-social-container">
+          <a href="https://github.com/TKravel" target="_blank"><i class="fab fa-github-square nav-icon"></i></a>
+          <a href="https://www.linkedin.com/in/tim-kravel/" target="_blank"><i class="fab fa-linkedin nav-icon"></i></a>
+        </div>
+      </div>
+      <p>&copy <span id="current-year"></span> TKDevDesign.com</p>
+    </footer>
+    <script src="scripts/index.js"></script>
+  </body>
 </html>
