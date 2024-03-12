@@ -389,10 +389,6 @@ function handleForm(e) {
     message: message,
   };
 
-  console.log(data);
-
-  //https://www.tkdevdesign.com/api/portfolioServer
-
   fetch("https://www.tkdevdesign.com/api/portfolioServer/contact", {
     method: "POST",
     headers: {
@@ -402,7 +398,6 @@ function handleForm(e) {
   })
     .then((Response) => Response.json())
     .then((data) => {
-      console.log(data);
       if (data) {
         formWrapper.classList.add("hide-content");
         msg.classList.remove("hide-content");
@@ -411,7 +406,6 @@ function handleForm(e) {
     })
     .catch((err) => {
       if (err) {
-        console.log("test", err);
         formWrapper.classList.add("hide-content");
         errorMsg.classList.remove("hide-content");
         spinner.classList.add("hide-content");
@@ -421,7 +415,6 @@ function handleForm(e) {
 }
 
 function restoreForm() {
-  console.log("clicked");
   msg.classList.add("hide-content");
   formWrapper.classList.remove("hide-content");
   submitBtn.classList.remove("hide-content");
