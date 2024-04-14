@@ -507,6 +507,7 @@ nav a {
 }
 
 #skill-container {
+  align-self: start;
   background-color: var(--main-dark);
   border-radius: 0.5em;
   color: #fff;
@@ -530,9 +531,11 @@ nav a {
   border: 1px solid var(--main-dark);
   border-radius: 0.5em;
   color: #000;
+  font-size: 0.8rem;
   margin: 0.3em;
   padding: 0.5em;
   text-align: center;
+  width: 28%;
 }
 
 .icon-container p:hover {
@@ -545,17 +548,30 @@ nav a {
   height: 4em;
 }
 
+@media screen and (max-width: 1300px) {
+  .icon-container {
+    width: 45%;
+  }
+  .skill-icon {
+    width: 3.5em;
+    height: 3.5em;
+  }
+}
+
 @media screen and (max-width: 950px) {
   #bio-container {
     width: 100%;
   }
   #skill-container {
     margin: auto;
-    width: 80%;
+    width: 400px;
   }
   #skill-container h2 {
     text-align: center;
     width: 100%;
+  }
+  .icon-container {
+    width: 28%;
   }
 }
 

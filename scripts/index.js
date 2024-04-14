@@ -111,7 +111,7 @@ const digits = [
   "Y",
   "Z",
 ];
-const selectedWords = ["Creative", "Ambitious", "Problem solver", "Tim Kravel", "Front-end Developer"];
+const selectedWords = ["Creative", "Ambitious", "Problem solver", "Tim Kravel", "Software Developer"];
 
 function randomizeDigit() {
   const randomNum = Math.floor(Math.random() * (digits.length - 1));
